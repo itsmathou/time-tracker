@@ -10,6 +10,7 @@ import SwiftUI
 struct SchedulingView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
+    @State private var scheduleName = ""
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,6 +27,9 @@ struct SchedulingView: View {
             .padding(.bottom, 10)
             
             Text("scheduling_description")
+                .padding(.bottom, 5)
+            
+            TextField("scheduling_name_placeholder", text: $scheduleName)
                 .padding(.bottom, 5)
             
             HStack(spacing: 30) {

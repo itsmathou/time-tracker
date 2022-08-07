@@ -9,18 +9,23 @@ import Foundation
 
 protocol FileManagement {
     func loadSchedules() -> SchedulingModel?
-    var schedulesUrl: URL? { get }
+    func documentUrl(for file: FileName) -> URL?
+}
+
+enum FileName: String {
+    case categories = "categories.json"
+    case schedules = "time-tracker.json"
 }
 
 final class TTFileManager: FileManagement {
-    var schedulesUrl: URL? {
+    func documentUrl(for fileName: FileName) -> URL? {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let documentsUrl = NSURL(fileURLWithPath: documentPath)
-        return documentsUrl.appendingPathComponent("time-tracker.json")
+        let url = NSURL(fileURLWithPath: documentPath)
+        return url.appendingPathComponent(fileName.rawValue)
     }
     
     func loadSchedules() -> SchedulingModel? {
-        guard let scheduleUrl = schedulesUrl, let existingSchedules = try? Data(contentsOf: scheduleUrl) else {
+        guard let scheduleUrl = documentUrl(for: .schedules), let existingSchedules = try? Data(contentsOf: scheduleUrl) else {
             return nil
         }
         

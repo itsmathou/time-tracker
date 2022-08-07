@@ -22,7 +22,7 @@ struct SchedulesView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                Text("schedules_title")
+                Text(shouldCreateNewSchedule ? "schedules_create_title" : "schedules_list_title")
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -34,55 +34,8 @@ struct SchedulesView: View {
             .padding(.bottom, 10)
             
             if shouldCreateNewSchedule {
-                VStack(alignment: .leading) {
-                    Group {
-                        Text("scheduling_title")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(Color.gray.opacity(0.3))
-                            .padding(.top, -10)
-                    }
-                    .padding(.bottom, 10)
-                    
-                    Text("scheduling_description")
-                        .padding(.bottom, 5)
-                    
-                    TextField("scheduling_name_placeholder", text: $scheduleName)
-                        .padding(.bottom, 5)
-                    
-                    HStack(spacing: 30) {
-                        DatePicker(selection: $startDate, displayedComponents: .date) {
-                            Text("scheduling_start")
-                                .font(.body)
-                        }
-                        
-                        DatePicker(selection: $endDate, in: startDate..., displayedComponents: .date) {
-                            Text("scheduling_end")
-                                .font(.body)
-                        }
-                    }
-                    .padding(.bottom, 10)
-                    
-                    Text("scheduling_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
-                        .font(.body)
-                        .padding(.bottom, 10)
-                    
-                    HStack {
-                        Spacer()
-                        
-                        Button {
-                            saveSchedule()
-                        } label: {
-                            Text("scheduling_save_cta")
-                        }
+                createScheduleView
 
-                    }
-                    
-                    Spacer()
-                }
             } else if let schedules = viewModel.schedules, !schedules.isEmpty {
                 List(schedules) { schedule in
                     VStack(alignment: .leading) {
@@ -147,6 +100,35 @@ private extension SchedulesView {
                 endDate: endDate
             )
         )
+    }
+    
+    var createScheduleView: some View {
+        VStack(alignment: .leading) {
+            Text("schedules_create_description")
+                .padding(.bottom, 5)
+            
+            TextField("schedules_create_name_placeholder", text: $scheduleName)
+                .padding(.bottom, 5)
+            
+            HStack(spacing: 30) {
+                DatePicker(selection: $startDate, displayedComponents: .date) {
+                    Text("schedules_create_start")
+                        .font(.body)
+                }
+                
+                DatePicker(selection: $endDate, in: startDate..., displayedComponents: .date) {
+                    Text("schedules_create_end")
+                        .font(.body)
+                }
+            }
+            .padding(.bottom, 10)
+            
+            Text("schedules_create_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
+                .font(.body)
+                .padding(.bottom, 10)
+            
+            Spacer()
+        }
     }
 }
 

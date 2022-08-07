@@ -9,16 +9,16 @@
 "app_title" = "Activity Tracker";
 "sidebar_section_first" = "Schedules and activities";
 
-"schedules_title" = "My schedules";
+"schedules_list_title" = "My schedules";
 "schedules_empty_list" = "You don't have any schedules at the moment.";
 "schedules_schedule_date_range %@ %@" = "From %@ to %@";
 "schedules_add_activity_cta" = "Add an activity";
-"schedules_title" = "Create schedule";
-"schedules_description" = "This is where can create your schedule by selecting start and end dates.";
-"schedules_name_placeholder" = "Schedule name";
-"schedules_start" = "Start date";
-"schedules_end" = "End date";
-"schedules_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
+"schedules_create_title" = "Create schedule";
+"schedules_create_description" = "This is where can create your schedule by selecting start and end dates.";
+"schedules_create_name_placeholder" = "Schedule name";
+"schedules_create_start" = "Start date";
+"schedules_create_end" = "End date";
+"schedules_create_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
 "schedules_add_cta" = "Create schedule";
 "schedules_save_cta" = "Save schedule";
 "schedules_error_title" = "Schedule name is missing";

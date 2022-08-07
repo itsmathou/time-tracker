@@ -17,7 +17,7 @@ struct ContentView: View {
                     NavigationLink(tag: Item.mySchedules, selection: $item) {
                         SchedulesView(viewModel: SchedulesViewModel())
                     } label: {
-                        sidebarLabel("schedules_title", iconName: "calendar.badge.clock")
+                        sidebarLabel("schedules_list_title", iconName: "calendar.badge.clock")
                     }
                     
                     NavigationLink(tag: Item.myCategories, selection: $item) {

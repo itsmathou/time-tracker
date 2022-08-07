@@ -16,7 +16,9 @@ struct SchedulesView: View {
 
     var body: some View {
         if let schedules = viewModel.schedules, !schedules.isEmpty {
-            Text("You have \(schedules.count) schedules")
+            ForEach(schedules) { schedule in
+                Text(schedule.scheduleName)
+            }
         } else {
             emptyView
         }
@@ -39,7 +41,7 @@ private extension SchedulesView {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulesView(viewModel: MockSchedulesViewModel(isEmpty: true))
+        SchedulesView(viewModel: MockSchedulesViewModel(isEmpty: false))
     }
 }
 
@@ -51,11 +53,13 @@ final class MockSchedulesViewModel: Schedules {
     init(isEmpty: Bool) {
         let mockSchedules = [
             SchedulingModel.Schedule(
+                id: UUID(),
                 scheduleName: "July 2021",
                 startDate: Date.create(day: 1, month: 7, year: 2021)!,
                 endDate: Date.create(day: 31, month: 7, year: 2021)!
             ),
             SchedulingModel.Schedule(
+                id: UUID(),
                 scheduleName: "August 2021",
                 startDate: Date.create(day: 1, month: 8, year: 2021)!,
                 endDate: Date.create(day: 31, month: 8, year: 2021)!

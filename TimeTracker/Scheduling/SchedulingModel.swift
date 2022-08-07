@@ -10,7 +10,8 @@ import Foundation
 struct SchedulingModel: Codable {
     let schedules: [Schedule]
     
-    struct Schedule: Codable {
+    struct Schedule: Codable, Identifiable {
+        let id: UUID
         let scheduleName: String
         let startDate: Date
         let endDate: Date

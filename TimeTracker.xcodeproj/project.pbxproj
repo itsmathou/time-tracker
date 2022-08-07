@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359EE28A02E3200FDF176 /* FileManagement.swift */; };
 		B52359F228A041BE00FDF176 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F128A041BE00FDF176 /* ActivitiesView.swift */; };
+		B52359F428A0436B00FDF176 /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F328A0436B00FDF176 /* ActivitiesViewModel.swift */; };
+		B52359F628A0438F00FDF176 /* ActivitiyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F528A0438F00FDF176 /* ActivitiyModel.swift */; };
+		B52359F928A0468600FDF176 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F828A0468600FDF176 /* EmptyView.swift */; };
 		B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */; };
 		B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014DA289FD5DE00B17EA4 /* ContentView.swift */; };
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		B52359EE28A02E3200FDF176 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		B52359F128A041BE00FDF176 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
+		B52359F328A0436B00FDF176 /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
+		B52359F528A0438F00FDF176 /* ActivitiyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiyModel.swift; sourceTree = "<group>"; };
+		B52359F828A0468600FDF176 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B57014D5289FD5DE00B17EA4 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		B57014DA289FD5DE00B17EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,8 +108,18 @@
 			isa = PBXGroup;
 			children = (
 				B52359F128A041BE00FDF176 /* ActivitiesView.swift */,
+				B52359F328A0436B00FDF176 /* ActivitiesViewModel.swift */,
+				B52359F528A0438F00FDF176 /* ActivitiyModel.swift */,
 			);
 			path = Activities;
+			sourceTree = "<group>";
+		};
+		B52359F728A0467500FDF176 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B52359F828A0468600FDF176 /* EmptyView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		B57014CC289FD5DE00B17EA4 = {
@@ -130,6 +146,7 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B52359F728A0467500FDF176 /* Shared */,
 				B52359F028A0419D00FDF176 /* Activities */,
 				B52359ED28A02E2000FDF176 /* Utilities */,
 				B5D34AF828A0222D00477111 /* Extensions */,
@@ -336,10 +353,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
+				B52359F928A0468600FDF176 /* EmptyView.swift in Sources */,
+				B52359F428A0436B00FDF176 /* ActivitiesViewModel.swift in Sources */,
 				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
 				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,
+				B52359F628A0438F00FDF176 /* ActivitiyModel.swift in Sources */,
 				B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */,
 				B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */,
 				B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */,

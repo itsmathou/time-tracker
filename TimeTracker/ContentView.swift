@@ -31,7 +31,7 @@ struct ContentView: View {
                 
                 Section("sidebar_section_activities") {
                     NavigationLink(tag: Item.myActivities, selection: $item) {
-                        ActivitiesView()
+                        ActivitiesView(viewModel: ActivitiesViewModel())
                     } label: {
                         sidebarLabel("activities_title", iconName: "guitars.fill")
                     }

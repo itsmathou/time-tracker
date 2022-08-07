@@ -18,3 +18,5 @@
 "scheduling_error_title" = "Schedule name is missing";
 "scheduling_error_message" = "A name for your schedule is required before saving it.";
 "scheduling_error_cta" = "OK";
+
+"schedules_title" = "My schedules";

@@ -18,6 +18,7 @@
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 		B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* SchedulingModel.swift */; };
 		B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */; };
+		B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE228A00D3E00477111 /* SchedulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5D34ADC289FF14E00477111 /* SchedulingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingModel.swift; sourceTree = "<group>"; };
 		B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingViewModel.swift; sourceTree = "<group>"; };
+		B5D34AE228A00D3E00477111 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B5D34AE128A00D2F00477111 /* Schedules */,
 				B5D34AD3289FE21E00477111 /* Scheduling */,
 				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
 				B57014DA289FD5DE00B17EA4 /* ContentView.swift */,
@@ -155,6 +158,14 @@
 				B5D34ADB289FE6A300477111 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5D34AE128A00D2F00477111 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
+			);
+			path = Schedules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
 				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,

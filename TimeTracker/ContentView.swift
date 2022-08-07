@@ -14,9 +14,17 @@ struct ContentView: View {
                 NavigationLink {
                     SchedulingView(viewModel: SchedulingViewModel())
                 } label: {
-                    Image(systemName: "calendar")
+                    Image(systemName: "calendar.badge.clock")
                     
                     Text("scheduling_title")
+                }
+                
+                NavigationLink {
+                    SchedulesView()
+                } label: {
+                    Image(systemName: "calendar")
+                    
+                    Text("schedules_title")
                 }
             }
         }

@@ -38,8 +38,6 @@ private extension SchedulingViewModel {
     }
 
     func loadExistingSchedulesIfNeeded() -> SchedulingModel? {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let documentsUrl = NSURL(fileURLWithPath: documentPath)
         guard let scheduleUrl,
               let existingSchedules = try? Data(contentsOf: scheduleUrl) else {
             return nil

@@ -17,6 +17,7 @@
 		B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AD4289FE24400477111 /* SchedulingView.swift */; };
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 		B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* SchedulingModel.swift */; };
+		B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B5D34AD4289FE24400477111 /* SchedulingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingView.swift; sourceTree = "<group>"; };
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5D34ADC289FF14E00477111 /* SchedulingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingModel.swift; sourceTree = "<group>"; };
+		B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D34AD4289FE24400477111 /* SchedulingView.swift */,
+				B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */,
 				B5D34ADC289FF14E00477111 /* SchedulingModel.swift */,
 			);
 			path = Scheduling;
@@ -287,6 +290,7 @@
 			files = (
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
+				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,
 				B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */,
 				B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */,
 			);

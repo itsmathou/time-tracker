@@ -12,6 +12,11 @@ struct SchedulingView: View {
     @State private var endDate = Date()
     @State private var scheduleName = ""
     @State private var shouldShowMissingNameAlert = false
+    private let viewModel: Scheduling
+    
+    init(viewModel: Scheduling) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -84,12 +89,18 @@ private extension SchedulingView {
             shouldShowMissingNameAlert = true
             return
         }
-        print("Schedule name: \(scheduleName), startDate: \(startDate.formatted(date: .long, time: .omitted)), endDate: \(endDate.formatted(date: .long, time: .omitted))")
+        viewModel.save(
+            schedule: .init(
+                scheduleName: scheduleName,
+                startDate: startDate,
+                endDate: endDate
+            )
+        )
     }
 }
 
 struct SchedulingView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulingView()
+        SchedulingView(viewModel: SchedulingViewModel())
     }
 }

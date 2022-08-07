@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SchedulingModel {
-    var schedules: [Schedule]
+struct SchedulingModel: Codable {
+    let schedules: [Schedule]
     
-    struct Schedule {
-        var scheduleName: String
-        var startDate: Date
-        var endDate: Date
+    struct Schedule: Codable {
+        let scheduleName: String
+        let startDate: Date
+        let endDate: Date
     }
 }

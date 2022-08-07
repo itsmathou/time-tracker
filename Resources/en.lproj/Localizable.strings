@@ -7,6 +7,7 @@
 */
 
 "app_title" = "Time Tracker";
+"sidebar_section_first_title" = "Manage my schedules";
 
 "scheduling_title" = "Create schedule";
 "scheduling_description" = "This is where can create your schedule by selecting start and end dates.";

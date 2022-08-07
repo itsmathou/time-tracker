@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var item: Item? = .createSchedule
+    @State private var item: Item? = .mySchedules
 
     var body: some View {
         NavigationView {
             List {
                 Section("sidebar_section_first") {
-                    NavigationLink(tag: Item.createSchedule, selection: $item) {
+                    NavigationLink(tag: Item.mySchedules, selection: $item) {
                         SchedulesView(viewModel: SchedulesViewModel())
                     } label: {
                         sidebarLabel("schedules_title", iconName: "calendar.badge.clock")
-                    }
-
-                    
-                    NavigationLink(tag: Item.mySchedules, selection: $item) {
-                        SchedulingView(viewModel: SchedulingViewModel())
-                    } label: {
-                        sidebarLabel("scheduling_title", iconName: "calendar.badge.plus")
                     }
                     
                     NavigationLink(tag: Item.myCategories, selection: $item) {
@@ -53,7 +46,6 @@ private extension ContentView {
     }
     
     enum Item: Hashable, Identifiable {
-        case createSchedule
         case mySchedules
         case myCategories
         

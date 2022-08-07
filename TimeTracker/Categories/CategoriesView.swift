@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoriesView: View {
     private let viewModel: Categories
     @State private var shouldCreateNewCategory = false
+    @State private var categoryName = ""
     
     init(viewModel: Categories) {
         self.viewModel = viewModel
@@ -30,7 +31,7 @@ struct CategoriesView: View {
             .padding(.bottom, 10)
             
             if shouldCreateNewCategory {
-                Text("Create an activity")
+                createCategoriesView
             } else if let categories = viewModel.items, !categories.isEmpty {
                 Text("You have \(categories.count) activities")
             } else {
@@ -44,9 +45,12 @@ struct CategoriesView: View {
         .toolbar {
             ToolbarItem {
                 if shouldCreateNewCategory {
-                    Button("Save activity") {
+                    Button("categories_save_category_cta") {
+                        guard !categoryName.isEmpty else {
+                            return
+                        }
+                        viewModel.save(category: categoryName)
                         shouldCreateNewCategory = false
-                        print("Activity is being saved")
                     }
                 } else {
                     Button("categories_add_category_cta") {
@@ -55,6 +59,12 @@ struct CategoriesView: View {
                 }
             }
         }
+    }
+}
+
+private extension CategoriesView {
+    var createCategoriesView: some View {
+        TextField("categories_textfield_placeholder", text: $categoryName)
     }
 }
 

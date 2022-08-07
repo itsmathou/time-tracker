@@ -28,5 +28,7 @@
 "schedules_add_activity_cta" = "Add an activity";
 
 "categories_title" = "My categories";
-"categories_add_category_cta" = "Create a category";
+"categories_add_category_cta" = "New category";
+"categories_textfield_placeholder" = "Create a new category";
+"categories_save_category_cta" = "Save category";
 "categories_empty_list" = "You don't have any categories at the moment.";

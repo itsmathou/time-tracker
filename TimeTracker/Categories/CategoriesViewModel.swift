@@ -9,6 +9,7 @@ import Foundation
 
 protocol Categories {
     var items: [Category]? { get }
+    func save(category: String)
 }
 
 
@@ -19,4 +20,7 @@ final class CategoriesViewModel: Categories {
         items = [Category]()
     }
     
+    func save(category: String) {
+        print("category is being saved")
+    }
 }

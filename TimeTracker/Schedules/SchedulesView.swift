@@ -15,30 +15,45 @@ struct SchedulesView: View {
     }
 
     var body: some View {
-        if let schedules = viewModel.schedules, !schedules.isEmpty {
-            List(schedules) { schedule in
-                VStack(alignment: .leading) {
-                    Text(schedule.scheduleName)
-                        .padding(.bottom, 5)
-                    
-                    Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
-                        .padding(.bottom, 5)
-                    
-                    Button {
-                        addActivityTapped()
-                    } label: {
-                        Text("schedules_add_activity_cta")
-                    }
-                    
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color.gray.opacity(0.3))
-                }
-                .padding(.bottom, 30)
+        VStack(alignment: .leading) {
+            Group {
+                Text("schedules_title")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.gray.opacity(0.3))
+                    .padding(.top, -10)
             }
-        } else {
-            emptyView
+            .padding(.bottom, 10)
+
+            if let schedules = viewModel.schedules, !schedules.isEmpty {
+                List(schedules) { schedule in
+                    VStack(alignment: .leading) {
+                        Text(schedule.scheduleName)
+                            .padding(.bottom, 5)
+                        
+                        Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
+                            .padding(.bottom, 5)
+                        
+                        Button {
+                            addActivityTapped()
+                        } label: {
+                            Text("schedules_add_activity_cta")
+                        }
+                        
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color.gray.opacity(0.3))
+                    }
+                    .padding(.bottom, 30)
+                }
+            } else {
+                emptyView
+            }
         }
+        .padding(.horizontal, 20)
     }
 }
 

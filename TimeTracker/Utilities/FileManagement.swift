@@ -8,14 +8,14 @@
 import Foundation
 
 protocol FileManagement {
-    func loadSchedules() -> SchedulingModel?
+    func loadSchedules() -> [Schedule]?
     func loadCategories() -> [Category]?
     func documentUrl(for file: FileName) -> URL?
 }
 
 enum FileName: String {
     case categories = "categories.json"
-    case schedules = "time-tracker.json"
+    case schedules = "schedules.json"
 }
 
 final class TTFileManager: FileManagement {
@@ -25,13 +25,13 @@ final class TTFileManager: FileManagement {
         return url.appendingPathComponent(fileName.rawValue)
     }
     
-    func loadSchedules() -> SchedulingModel? {
+    func loadSchedules() -> [Schedule]? {
         guard let scheduleUrl = documentUrl(for: .schedules),
               let existingSchedules = try? Data(contentsOf: scheduleUrl) else {
             return nil
         }
         
-        return try? JSONDecoder().decode(SchedulingModel.self, from: existingSchedules)
+        return try? JSONDecoder().decode([Schedule].self, from: existingSchedules)
     }
     
     func loadCategories() -> [Category]? {

@@ -140,17 +140,17 @@ struct SchedulesView_Previews: PreviewProvider {
 
 #if DEBUG
 final class MockSchedulesViewModel: Schedules {
-    var schedules: [SchedulingModel.Schedule]?
+    var schedules: [Schedule]?
     
     init(isEmpty: Bool) {
         let mockSchedules = [
-            SchedulingModel.Schedule(
+            Schedule(
                 id: UUID(),
                 scheduleName: "July 2021",
                 startDate: Date.create(day: 1, month: 7, year: 2021)!,
                 endDate: Date.create(day: 31, month: 7, year: 2021)!
             ),
-            SchedulingModel.Schedule(
+            Schedule(
                 id: UUID(),
                 scheduleName: "August 2021",
                 startDate: Date.create(day: 1, month: 8, year: 2021)!,
@@ -160,6 +160,6 @@ final class MockSchedulesViewModel: Schedules {
         schedules = isEmpty ? nil : mockSchedules
     }
     
-    func save(schedule: SchedulingModel.Schedule) {}
+    func save(schedule: Schedule) {}
 }
 #endif

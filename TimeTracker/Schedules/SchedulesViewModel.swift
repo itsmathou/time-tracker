@@ -8,30 +8,29 @@
 import Foundation
 
 protocol Schedules {
-    var schedules: [SchedulingModel.Schedule]? { get }
-    func save(schedule: SchedulingModel.Schedule)
+    var schedules: [Schedule]? { get }
+    func save(schedule: Schedule)
 }
 
 final class SchedulesViewModel: Schedules {
     private let fileManager: FileManagement
 
-    var schedules: [SchedulingModel.Schedule]?
+    var schedules: [Schedule]?
     
     init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
         schedules = loadSchedules()
     }
     
-    func save(schedule: SchedulingModel.Schedule) {
+    func save(schedule: Schedule) {
         if let existingSchedules = loadSchedules(),
            let scheduleUrl = fileManager.documentUrl(for: .schedules) {
             var newListOfSchedules = existingSchedules
             newListOfSchedules.append(schedule)
-            let newModel = SchedulingModel(schedules: newListOfSchedules)
-            let data = try? JSONEncoder().encode(newModel)
+            let data = try? JSONEncoder().encode(newListOfSchedules)
             try? data?.write(to: scheduleUrl)
         } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
-            let model = SchedulingModel(schedules: [schedule])
+            let model = [schedule]
             let data = try? JSONEncoder().encode(model)
             try? data?.write(to: scheduleUrl)
         } else {
@@ -41,7 +40,7 @@ final class SchedulesViewModel: Schedules {
 }
 
 private extension SchedulesViewModel {
-    func loadSchedules() -> [SchedulingModel.Schedule]? {
-        return fileManager.loadSchedules()?.schedules
+    func loadSchedules() -> [Schedule]? {
+        return fileManager.loadSchedules()
     }
 }

@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("sidebar_section_schedules") {
+                Section("sidebar_section_first") {
                     NavigationLink(tag: Item.createSchedule, selection: $item) {
                         SchedulesView(viewModel: SchedulesViewModel())
                     } label: {
@@ -26,10 +26,7 @@ struct ContentView: View {
                     } label: {
                         sidebarLabel("scheduling_title", iconName: "calendar.badge.plus")
                     }
-                }
-                .headerProminence(.increased)
-                
-                Section("sidebar_section_categories") {
+                    
                     NavigationLink(tag: Item.myCategories, selection: $item) {
                         CategoriesView(viewModel: CategoriesViewModel())
                     } label: {

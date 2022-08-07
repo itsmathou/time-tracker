@@ -6,9 +6,8 @@
   
 */
 
-"app_title" = "Time Tracker";
-"sidebar_section_schedules" = "Manage my schedules";
-"sidebar_section_categories" = "Manage my categories";
+"app_title" = "Activity Tracker";
+"sidebar_section_first" = "Schedules and activities";
 
 
 "scheduling_title" = "Create schedule";

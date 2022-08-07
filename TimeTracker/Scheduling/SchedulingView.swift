@@ -52,15 +52,28 @@ struct SchedulingView: View {
             HStack {
                 Spacer()
                 
-                Button(action: {}) {
+                Button {
+                    saveSchedule()
+                } label: {
                     Text("scheduling_save_cta")
                 }
+
             }
             
             Spacer()
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
+    }
+}
+
+private extension SchedulingView {
+    func saveSchedule() {
+        guard !scheduleName.isEmpty else {
+            print("Show an alert")
+            return 
+        }
+        print("Schedule name: \(scheduleName), startDate: \(startDate.formatted(date: .long, time: .omitted)), endDate: \(endDate.formatted(date: .long, time: .omitted))")
     }
 }
 

@@ -13,12 +13,22 @@ struct SchedulingView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("scheduling_title")
-                .font(.title)
+            Group {
+                Text("scheduling_title")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.gray.opacity(0.3))
+                    .padding(.top, -10)
+            }
+            .padding(.bottom, 10)
             
             Text("scheduling_description")
+                .padding(.bottom, 5)
             
-            HStack {
+            HStack(spacing: 30) {
                 DatePicker(selection: $startDate, displayedComponents: .date) {
                     Text("scheduling_start")
                         .font(.body)
@@ -29,12 +39,13 @@ struct SchedulingView: View {
                         .font(.body)
                 }
             }
+            .padding(.bottom, 10)
             
             Text("scheduling_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
                 .font(.body)
+                .padding(.bottom, 10)
             
             HStack {
-                
                 Spacer()
                 
                 Button(action: {}) {
@@ -44,6 +55,7 @@ struct SchedulingView: View {
             
             Spacer()
         }
+        .padding(.top, 20)
         .padding(.horizontal, 20)
     }
 }

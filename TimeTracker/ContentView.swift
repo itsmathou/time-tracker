@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("sidebar_section_first_title") {                    
+                Section("sidebar_section_schedules") {
                     NavigationLink(tag: Item.createSchedule, selection: $item) {
                         SchedulesView(viewModel: SchedulesViewModel())
                     } label: {
@@ -25,6 +25,15 @@ struct ContentView: View {
                         SchedulingView(viewModel: SchedulingViewModel())
                     } label: {
                         sidebarLabel("scheduling_title", iconName: "calendar.badge.plus")
+                    }
+                }
+                .headerProminence(.increased)
+                
+                Section("sidebar_section_categories") {
+                    NavigationLink(tag: Item.myCategories, selection: $item) {
+                        CategoriesView(viewModel: CategoriesViewModel())
+                    } label: {
+                        sidebarLabel("categories_title", iconName: "guitars.fill")
                     }
                 }
                 .headerProminence(.increased)
@@ -49,6 +58,7 @@ private extension ContentView {
     enum Item: Hashable, Identifiable {
         case createSchedule
         case mySchedules
+        case myCategories
         
         var id: Item { self }
     }

@@ -19,13 +19,13 @@ final class SchedulingViewModel: Scheduling {
     }
     
     func save(schedule: SchedulingModel.Schedule) {
-        if let existingSchedules = loadExistingSchedulesIfNeeded(), let scheduleUrl = fileManager.schedulesUrl {
+        if let existingSchedules = loadExistingSchedulesIfNeeded(), let scheduleUrl = fileManager.documentUrl(for: .schedules) {
             var newListOfSchedules = existingSchedules.schedules
             newListOfSchedules.append(schedule)
             let newModel = SchedulingModel(schedules: newListOfSchedules)
             let data = try? JSONEncoder().encode(newModel)
             try? data?.write(to: scheduleUrl)
-        } else if let scheduleUrl = fileManager.schedulesUrl {
+        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
             let model = SchedulingModel(schedules: [schedule])
             let data = try? JSONEncoder().encode(model)
             try? data?.write(to: scheduleUrl)

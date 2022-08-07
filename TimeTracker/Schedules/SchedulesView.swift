@@ -50,26 +50,15 @@ struct SchedulesView: View {
                     .padding(.bottom, 30)
                 }
             } else {
-                emptyView
+                EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
             }
         }
+        .padding(.top, 20)
         .padding(.horizontal, 20)
     }
 }
 
-private extension SchedulesView {
-    var emptyView: some View {
-        HStack {
-            Image(systemName: "cloud.bolt.rain")
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.white, .teal, .white)
-                .font(.body)
-            
-            Text("schedules_empty_list")
-                .font(.body)
-        }
-    }
-    
+private extension SchedulesView {    
     func addActivityTapped() {
         print("Activity button tapped")
     }
@@ -77,7 +66,7 @@ private extension SchedulesView {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulesView(viewModel: MockSchedulesViewModel(isEmpty: false))
+        SchedulesView(viewModel: MockSchedulesViewModel(isEmpty: true))
     }
 }
 

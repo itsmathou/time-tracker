@@ -7,7 +7,9 @@
 */
 
 "app_title" = "Time Tracker";
-"sidebar_section_first_title" = "Manage my schedules";
+"sidebar_section_schedules" = "Manage my schedules";
+"sidebar_section_categories" = "Manage my categories";
+
 
 "scheduling_title" = "Create schedule";
 "scheduling_description" = "This is where can create your schedule by selecting start and end dates.";
@@ -24,3 +26,9 @@
 "schedules_empty_list" = "You don't have any schedules at the moment.";
 "schedules_schedule_date_range %@ %@" = "From %@ to %@";
 "schedules_add_activity_cta" = "Add an activity";
+
+"categories_title" = "My categories";
+"categories_add_category_cta" = "New category";
+"categories_textfield_placeholder" = "Create a new category";
+"categories_save_category_cta" = "Save category";
+"categories_empty_list" = "You don't have any categories at the moment.";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359EE28A02E3200FDF176 /* FileManagement.swift */; };
 		B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */; };
 		B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014DA289FD5DE00B17EA4 /* ContentView.swift */; };
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52359EE28A02E3200FDF176 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		B57014D5289FD5DE00B17EA4 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		B57014DA289FD5DE00B17EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52359ED28A02E2000FDF176 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B52359EE28A02E3200FDF176 /* FileManagement.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B57014CC289FD5DE00B17EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B52359ED28A02E2000FDF176 /* Utilities */,
 				B5D34AF828A0222D00477111 /* Extensions */,
 				B5D34AE128A00D2F00477111 /* Schedules */,
 				B5D34AD3289FE21E00477111 /* Scheduling */,
@@ -314,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
+				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
 				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,

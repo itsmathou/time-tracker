@@ -18,3 +18,8 @@
 "scheduling_error_title" = "Schedule name is missing";
 "scheduling_error_message" = "A name for your schedule is required before saving it.";
 "scheduling_error_cta" = "OK";
+
+"schedules_title" = "My schedules";
+"schedules_empty_list" = "You don't have any schedules at the moment.";
+"schedules_schedule_date_range %@ %@" = "From %@ to %@";
+"schedules_add_activity_cta" = "Add an activity";

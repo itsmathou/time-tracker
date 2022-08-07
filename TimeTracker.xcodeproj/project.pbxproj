@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359EE28A02E3200FDF176 /* FileManagement.swift */; };
 		B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */; };
 		B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014DA289FD5DE00B17EA4 /* ContentView.swift */; };
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
@@ -18,6 +19,9 @@
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 		B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* SchedulingModel.swift */; };
 		B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */; };
+		B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE228A00D3E00477111 /* SchedulesView.swift */; };
+		B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE428A019F000477111 /* SchedulesViewModel.swift */; };
+		B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AF928A0223A00477111 /* Extension+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52359EE28A02E3200FDF176 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		B57014D5289FD5DE00B17EA4 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		B57014DA289FD5DE00B17EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +58,9 @@
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5D34ADC289FF14E00477111 /* SchedulingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingModel.swift; sourceTree = "<group>"; };
 		B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingViewModel.swift; sourceTree = "<group>"; };
+		B5D34AE228A00D3E00477111 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
+		B5D34AE428A019F000477111 /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
+		B5D34AF928A0223A00477111 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52359ED28A02E2000FDF176 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B52359EE28A02E3200FDF176 /* FileManagement.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B57014CC289FD5DE00B17EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,9 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B52359ED28A02E2000FDF176 /* Utilities */,
+				B5D34AF828A0222D00477111 /* Extensions */,
+				B5D34AE128A00D2F00477111 /* Schedules */,
 				B5D34AD3289FE21E00477111 /* Scheduling */,
 				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
 				B57014DA289FD5DE00B17EA4 /* ContentView.swift */,
@@ -155,6 +174,23 @@
 				B5D34ADB289FE6A300477111 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5D34AE128A00D2F00477111 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
+				B5D34AE428A019F000477111 /* SchedulesViewModel.swift */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		B5D34AF828A0222D00477111 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5D34AF928A0223A00477111 /* Extension+Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
+				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
 				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,
 				B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */,
+				B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */,
 				B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */,
+				B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -91,6 +91,7 @@ private extension SchedulingView {
         }
         viewModel.save(
             schedule: .init(
+                id: UUID(),
                 scheduleName: scheduleName,
                 startDate: startDate,
                 endDate: endDate

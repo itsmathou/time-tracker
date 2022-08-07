@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct SchedulesView: View {
+    @State private var shouldCreateNewSchedule = false
+    @State private var shouldShowMissingNameAlert = false
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    @State private var scheduleName = ""
     private let viewModel: Schedules
     
     init(viewModel: Schedules) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                Text("schedules_title")
+                Text(shouldCreateNewSchedule ? "schedules_create_title" : "schedules_list_title")
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -27,8 +32,11 @@ struct SchedulesView: View {
                     .padding(.top, -10)
             }
             .padding(.bottom, 10)
+            
+            if shouldCreateNewSchedule {
+                createScheduleView
 
-            if let schedules = viewModel.schedules, !schedules.isEmpty {
+            } else if let schedules = viewModel.schedules, !schedules.isEmpty {
                 List(schedules) { schedule in
                     VStack(alignment: .leading) {
                         Text(schedule.scheduleName)
@@ -51,16 +59,76 @@ struct SchedulesView: View {
                 }
             } else {
                 EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
+                
+                Spacer()
             }
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
+        .toolbar {
+            ToolbarItem {
+                if shouldCreateNewSchedule {
+                    Button("schedules_save_cta") {
+                        saveSchedule()
+                        shouldCreateNewSchedule = false
+                    }
+                } else {
+                    Button("schedules_add_cta") {
+                        shouldCreateNewSchedule = true
+                    }
+                }
+            }
+        }
     }
 }
 
 private extension SchedulesView {    
     func addActivityTapped() {
         print("Activity button tapped")
+    }
+    
+    func saveSchedule() {
+        guard !scheduleName.isEmpty else {
+            shouldShowMissingNameAlert = true
+            return
+        }
+        viewModel.save(
+            schedule: .init(
+                id: UUID(),
+                scheduleName: scheduleName,
+                startDate: startDate,
+                endDate: endDate
+            )
+        )
+    }
+    
+    var createScheduleView: some View {
+        VStack(alignment: .leading) {
+            Text("schedules_create_description")
+                .padding(.bottom, 5)
+            
+            TextField("schedules_create_name_placeholder", text: $scheduleName)
+                .padding(.bottom, 5)
+            
+            HStack(spacing: 30) {
+                DatePicker(selection: $startDate, displayedComponents: .date) {
+                    Text("schedules_create_start")
+                        .font(.body)
+                }
+                
+                DatePicker(selection: $endDate, in: startDate..., displayedComponents: .date) {
+                    Text("schedules_create_end")
+                        .font(.body)
+                }
+            }
+            .padding(.bottom, 10)
+            
+            Text("schedules_create_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
+                .font(.body)
+                .padding(.bottom, 10)
+            
+            Spacer()
+        }
     }
 }
 
@@ -72,18 +140,17 @@ struct SchedulesView_Previews: PreviewProvider {
 
 #if DEBUG
 final class MockSchedulesViewModel: Schedules {
-    var schedules: [SchedulingModel.Schedule]?
-    
+    var schedules: [Schedule]?
     
     init(isEmpty: Bool) {
         let mockSchedules = [
-            SchedulingModel.Schedule(
+            Schedule(
                 id: UUID(),
                 scheduleName: "July 2021",
                 startDate: Date.create(day: 1, month: 7, year: 2021)!,
                 endDate: Date.create(day: 31, month: 7, year: 2021)!
             ),
-            SchedulingModel.Schedule(
+            Schedule(
                 id: UUID(),
                 scheduleName: "August 2021",
                 startDate: Date.create(day: 1, month: 8, year: 2021)!,
@@ -92,5 +159,7 @@ final class MockSchedulesViewModel: Schedules {
         ]
         schedules = isEmpty ? nil : mockSchedules
     }
+    
+    func save(schedule: Schedule) {}
 }
 #endif

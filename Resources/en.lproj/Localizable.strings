@@ -6,26 +6,24 @@
   
 */
 
-"app_title" = "Time Tracker";
-"sidebar_section_schedules" = "Manage my schedules";
-"sidebar_section_categories" = "Manage my categories";
+"app_title" = "Activity Tracker";
+"sidebar_section_first" = "Schedules and activities";
 
-
-"scheduling_title" = "Create schedule";
-"scheduling_description" = "This is where can create your schedule by selecting start and end dates.";
-"scheduling_name_placeholder" = "Schedule name";
-"scheduling_start" = "Start date";
-"scheduling_end" = "End date";
-"scheduling_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
-"scheduling_save_cta" = "Save my schedule";
-"scheduling_error_title" = "Schedule name is missing";
-"scheduling_error_message" = "A name for your schedule is required before saving it.";
-"scheduling_error_cta" = "OK";
-
-"schedules_title" = "My schedules";
+"schedules_list_title" = "My schedules";
 "schedules_empty_list" = "You don't have any schedules at the moment.";
 "schedules_schedule_date_range %@ %@" = "From %@ to %@";
 "schedules_add_activity_cta" = "Add an activity";
+"schedules_create_title" = "Create schedule";
+"schedules_create_description" = "This is where can create your schedule by selecting start and end dates.";
+"schedules_create_name_placeholder" = "Schedule name";
+"schedules_create_start" = "Start date";
+"schedules_create_end" = "End date";
+"schedules_create_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
+"schedules_add_cta" = "Create schedule";
+"schedules_save_cta" = "Save schedule";
+"schedules_error_title" = "Schedule name is missing";
+"schedules_error_message" = "A name for your schedule is required before saving it.";
+"schedules_error_cta" = "OK";
 
 "categories_title" = "My categories";
 "categories_add_category_cta" = "New category";

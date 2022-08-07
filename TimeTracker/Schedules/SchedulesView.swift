@@ -53,6 +53,7 @@ struct SchedulesView: View {
                 emptyView
             }
         }
+        .padding(.top, 20)
         .padding(.horizontal, 20)
     }
 }

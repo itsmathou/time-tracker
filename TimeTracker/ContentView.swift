@@ -28,6 +28,7 @@ struct ContentView: View {
                 }
                 .headerProminence(.increased)
             }
+            .padding(.top, 5)
         }
         .navigationTitle("app_title")
     }

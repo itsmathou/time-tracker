@@ -14,6 +14,8 @@
 		B57014EB289FD5DF00B17EA4 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */; };
 		B57014F5289FD5DF00B17EA4 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */; };
 		B57014F7289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */; };
+		B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AD4289FE24400477111 /* SchedulingView.swift */; };
+		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
 		B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5D34AD4289FE24400477111 /* SchedulingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingView.swift; sourceTree = "<group>"; };
+		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		B57014CC289FD5DE00B17EA4 = {
 			isa = PBXGroup;
 			children = (
+				B5D34AD6289FE68300477111 /* Resources */,
 				B57014D7289FD5DE00B17EA4 /* TimeTracker */,
 				B57014E9289FD5DF00B17EA4 /* TimeTrackerTests */,
 				B57014F3289FD5DF00B17EA4 /* TimeTrackerUITests */,
@@ -95,9 +100,9 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B5D34AD3289FE21E00477111 /* Scheduling */,
 				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
 				B57014DA289FD5DE00B17EA4 /* ContentView.swift */,
-				B57014DC289FD5DF00B17EA4 /* Assets.xcassets */,
 				B57014DE289FD5DF00B17EA4 /* TimeTracker.entitlements */,
 				B57014DF289FD5DF00B17EA4 /* Preview Content */,
 			);
@@ -127,6 +132,23 @@
 				B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */,
 			);
 			path = TimeTrackerUITests;
+			sourceTree = "<group>";
+		};
+		B5D34AD3289FE21E00477111 /* Scheduling */ = {
+			isa = PBXGroup;
+			children = (
+				B5D34AD4289FE24400477111 /* SchedulingView.swift */,
+			);
+			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		B5D34AD6289FE68300477111 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B57014DC289FD5DF00B17EA4 /* Assets.xcassets */,
+				B5D34ADB289FE6A300477111 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57014E1289FD5DF00B17EA4 /* Preview Assets.xcassets in Resources */,
+				B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */,
 				B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +284,7 @@
 			files = (
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
+				B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +319,17 @@
 			targetProxy = B57014F1289FD5DF00B17EA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5D34ADB289FE6A300477111 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D34ADA289FE6A300477111 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B57014F8289FD5DF00B17EA4 /* Debug */ = {

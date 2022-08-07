@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ActivitiesView: View {
     private let viewModel: Activities
+    @State private var shouldCreateNewActivity = false
     
     init(viewModel: Activities) {
         self.viewModel = viewModel
@@ -28,7 +29,9 @@ struct ActivitiesView: View {
             }
             .padding(.bottom, 10)
             
-            if let activities = viewModel.items, !activities.isEmpty {
+            if shouldCreateNewActivity {
+                Text("Create an activity")
+            } else if let activities = viewModel.items, !activities.isEmpty {
                 Text("You have \(activities.count) activities")
             } else {
                 EmptyView(title: "activities_empty_list", iconName: "cloud.bolt.rain")
@@ -40,8 +43,15 @@ struct ActivitiesView: View {
         .padding(.horizontal, 20)
         .toolbar {
             ToolbarItem {
-                Button("activities_add_activity_cta") {
-                    print("Add an activity button tapped")
+                if shouldCreateNewActivity {
+                    Button("Save activity") {
+                        shouldCreateNewActivity = false
+                        print("Activity is being saved")
+                    }
+                } else {
+                    Button("activities_add_activity_cta") {
+                        shouldCreateNewActivity = true
+                    }
                 }
             }
         }

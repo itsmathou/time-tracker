@@ -11,6 +11,7 @@ struct SchedulingView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
+    @State private var shouldShowMissingNameAlert = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -64,14 +65,24 @@ struct SchedulingView: View {
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
+        .alert(
+            "scheduling_error_title",
+            isPresented: $shouldShowMissingNameAlert,
+            actions: {
+                Button(role: .cancel, action: {}) {
+                    Text("scheduling_error_cta")
+                }
+            }) {
+                Text("scheduling_error_message")
+            }
     }
 }
 
 private extension SchedulingView {
     func saveSchedule() {
         guard !scheduleName.isEmpty else {
-            print("Show an alert")
-            return 
+            shouldShowMissingNameAlert = true
+            return
         }
         print("Schedule name: \(scheduleName), startDate: \(startDate.formatted(date: .long, time: .omitted)), endDate: \(endDate.formatted(date: .long, time: .omitted))")
     }

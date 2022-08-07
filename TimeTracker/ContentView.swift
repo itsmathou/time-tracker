@@ -29,11 +29,11 @@ struct ContentView: View {
                 }
                 .headerProminence(.increased)
                 
-                Section("sidebar_section_activities") {
-                    NavigationLink(tag: Item.myActivities, selection: $item) {
-                        ActivitiesView(viewModel: ActivitiesViewModel())
+                Section("sidebar_section_categories") {
+                    NavigationLink(tag: Item.myCategories, selection: $item) {
+                        CategoriesView(viewModel: CategoriesViewModel())
                     } label: {
-                        sidebarLabel("activities_title", iconName: "guitars.fill")
+                        sidebarLabel("categories_title", iconName: "guitars.fill")
                     }
                 }
                 .headerProminence(.increased)
@@ -58,7 +58,7 @@ private extension ContentView {
     enum Item: Hashable, Identifiable {
         case createSchedule
         case mySchedules
-        case myActivities
+        case myCategories
         
         var id: Item { self }
     }

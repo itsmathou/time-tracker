@@ -1,5 +1,5 @@
 //
-//  ActivitiesView.swift
+//  CategoriesView.swift
 //  TimeTracker
 //
 //  Created by Mathilde Ferrand on 07/08/2022.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct ActivitiesView: View {
-    private let viewModel: Activities
-    @State private var shouldCreateNewActivity = false
+struct CategoriesView: View {
+    private let viewModel: Categories
+    @State private var shouldCreateNewCategory = false
     
-    init(viewModel: Activities) {
+    init(viewModel: Categories) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                Text("activities_title")
+                Text("categories_title")
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -29,12 +29,12 @@ struct ActivitiesView: View {
             }
             .padding(.bottom, 10)
             
-            if shouldCreateNewActivity {
+            if shouldCreateNewCategory {
                 Text("Create an activity")
-            } else if let activities = viewModel.items, !activities.isEmpty {
-                Text("You have \(activities.count) activities")
+            } else if let categories = viewModel.items, !categories.isEmpty {
+                Text("You have \(categories.count) activities")
             } else {
-                EmptyView(title: "activities_empty_list", iconName: "cloud.bolt.rain")
+                EmptyView(title: "categories_empty_list", iconName: "cloud.bolt.rain")
             }
             
             Spacer()
@@ -43,14 +43,14 @@ struct ActivitiesView: View {
         .padding(.horizontal, 20)
         .toolbar {
             ToolbarItem {
-                if shouldCreateNewActivity {
+                if shouldCreateNewCategory {
                     Button("Save activity") {
-                        shouldCreateNewActivity = false
+                        shouldCreateNewCategory = false
                         print("Activity is being saved")
                     }
                 } else {
-                    Button("activities_add_activity_cta") {
-                        shouldCreateNewActivity = true
+                    Button("categories_add_category_cta") {
+                        shouldCreateNewCategory = true
                     }
                 }
             }
@@ -58,8 +58,8 @@ struct ActivitiesView: View {
     }
 }
 
-struct ActivitiesView_Previews: PreviewProvider {
+struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesView(viewModel: ActivitiesViewModel())
+        CategoriesView(viewModel: CategoriesViewModel())
     }
 }

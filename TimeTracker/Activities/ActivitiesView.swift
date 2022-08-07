@@ -33,9 +33,18 @@ struct ActivitiesView: View {
             } else {
                 EmptyView(title: "activities_empty_list", iconName: "cloud.bolt.rain")
             }
+            
+            Spacer()
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
+        .toolbar {
+            ToolbarItem {
+                Button("activities_add_activity_cta") {
+                    print("Add an activity button tapped")
+                }
+            }
+        }
     }
 }
 

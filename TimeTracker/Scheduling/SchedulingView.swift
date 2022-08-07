@@ -10,6 +10,13 @@ import SwiftUI
 struct SchedulingView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
+    @State private var scheduleName = ""
+    @State private var shouldShowMissingNameAlert = false
+    private let viewModel: Scheduling
+    
+    init(viewModel: Scheduling) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,6 +33,9 @@ struct SchedulingView: View {
             .padding(.bottom, 10)
             
             Text("scheduling_description")
+                .padding(.bottom, 5)
+            
+            TextField("scheduling_name_placeholder", text: $scheduleName)
                 .padding(.bottom, 5)
             
             HStack(spacing: 30) {
@@ -48,20 +58,49 @@ struct SchedulingView: View {
             HStack {
                 Spacer()
                 
-                Button(action: {}) {
+                Button {
+                    saveSchedule()
+                } label: {
                     Text("scheduling_save_cta")
                 }
+
             }
             
             Spacer()
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
+        .alert(
+            "scheduling_error_title",
+            isPresented: $shouldShowMissingNameAlert,
+            actions: {
+                Button(role: .cancel, action: {}) {
+                    Text("scheduling_error_cta")
+                }
+            }) {
+                Text("scheduling_error_message")
+            }
+    }
+}
+
+private extension SchedulingView {
+    func saveSchedule() {
+        guard !scheduleName.isEmpty else {
+            shouldShowMissingNameAlert = true
+            return
+        }
+        viewModel.save(
+            schedule: .init(
+                scheduleName: scheduleName,
+                startDate: startDate,
+                endDate: endDate
+            )
+        )
     }
 }
 
 struct SchedulingView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulingView()
+        SchedulingView(viewModel: SchedulingViewModel())
     }
 }

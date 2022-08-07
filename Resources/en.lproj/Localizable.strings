@@ -10,7 +10,11 @@
 
 "scheduling_title" = "Create schedule";
 "scheduling_description" = "This is where can create your schedule by selecting start and end dates.";
+"scheduling_name_placeholder" = "Schedule name";
 "scheduling_start" = "Start date";
 "scheduling_end" = "End date";
 "scheduling_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
 "scheduling_save_cta" = "Save my schedule";
+"scheduling_error_title" = "Schedule name is missing";
+"scheduling_error_message" = "A name for your schedule is required before saving it.";
+"scheduling_error_cta" = "OK";

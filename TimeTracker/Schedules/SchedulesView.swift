@@ -16,8 +16,25 @@ struct SchedulesView: View {
 
     var body: some View {
         if let schedules = viewModel.schedules, !schedules.isEmpty {
-            ForEach(schedules) { schedule in
-                Text(schedule.scheduleName)
+            List(schedules) { schedule in
+                VStack(alignment: .leading) {
+                    Text(schedule.scheduleName)
+                        .padding(.bottom, 5)
+                    
+                    Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
+                        .padding(.bottom, 5)
+                    
+                    Button {
+                        addActivityTapped()
+                    } label: {
+                        Text("schedules_add_activity_cta")
+                    }
+                    
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color.gray.opacity(0.3))
+                }
+                .padding(.bottom, 30)
             }
         } else {
             emptyView
@@ -36,6 +53,10 @@ private extension SchedulesView {
             Text("schedules_empty_list")
                 .font(.body)
         }
+    }
+    
+    func addActivityTapped() {
+        print("Activity button tapped")
     }
 }
 

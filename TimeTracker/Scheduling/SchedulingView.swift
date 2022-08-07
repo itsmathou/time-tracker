@@ -13,22 +13,24 @@ struct SchedulingView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("This is where can create your schedule")
+            Text("scheduling_title")
                 .font(.title)
+            
+            Text("scheduling_description")
             
             HStack {
                 DatePicker(selection: $startDate, displayedComponents: .date) {
-                    Text("Start date")
+                    Text("scheduling_start")
                         .font(.body)
                 }
                 
                 DatePicker(selection: $endDate, in: startDate..., displayedComponents: .date) {
-                    Text("End date")
+                    Text("scheduling_end")
                         .font(.body)
                 }
             }
             
-            Text("Your schedule will start on \(startDate.formatted(date: .long, time: .omitted)) and end on \(endDate.formatted(date: .long, time: .omitted))")
+            Text("scheduling_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
                 .font(.body)
             
             HStack {
@@ -36,7 +38,7 @@ struct SchedulingView: View {
                 Spacer()
                 
                 Button(action: {}) {
-                    Text("Save my schedule")
+                    Text("scheduling_save_cta")
                 }
             }
             

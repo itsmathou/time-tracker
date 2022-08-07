@@ -16,11 +16,11 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "calendar")
                     
-                    Text("Create schedule")
+                    Text("scheduling_title")
                 }
             }
         }
-        .navigationTitle("Time Tracker")
+        .navigationTitle("app_title")
     }
 }
 

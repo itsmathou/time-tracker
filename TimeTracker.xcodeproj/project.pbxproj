@@ -19,6 +19,8 @@
 		B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* SchedulingModel.swift */; };
 		B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */; };
 		B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE228A00D3E00477111 /* SchedulesView.swift */; };
+		B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE428A019F000477111 /* SchedulesViewModel.swift */; };
+		B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AF928A0223A00477111 /* Extension+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B5D34ADC289FF14E00477111 /* SchedulingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingModel.swift; sourceTree = "<group>"; };
 		B5D34ADE289FFAEB00477111 /* SchedulingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulingViewModel.swift; sourceTree = "<group>"; };
 		B5D34AE228A00D3E00477111 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
+		B5D34AE428A019F000477111 /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
+		B5D34AF928A0223A00477111 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B5D34AF828A0222D00477111 /* Extensions */,
 				B5D34AE128A00D2F00477111 /* Schedules */,
 				B5D34AD3289FE21E00477111 /* Scheduling */,
 				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
@@ -164,8 +169,17 @@
 			isa = PBXGroup;
 			children = (
 				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
+				B5D34AE428A019F000477111 /* SchedulesViewModel.swift */,
 			);
 			path = Schedules;
+			sourceTree = "<group>";
+		};
+		B5D34AF828A0222D00477111 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5D34AF928A0223A00477111 /* Extension+Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +318,9 @@
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
 				B5D34ADF289FFAEB00477111 /* SchedulingViewModel.swift in Sources */,
 				B5D34AD5289FE24400477111 /* SchedulingView.swift in Sources */,
+				B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */,
 				B5D34ADD289FF14E00477111 /* SchedulingModel.swift in Sources */,
+				B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

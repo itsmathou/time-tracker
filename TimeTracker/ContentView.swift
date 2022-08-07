@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
                 
                 NavigationLink {
-                    SchedulesView()
+                    SchedulesView(viewModel: SchedulesViewModel())
                 } label: {
                     Image(systemName: "calendar")
                     

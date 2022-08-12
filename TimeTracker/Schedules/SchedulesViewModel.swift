@@ -37,12 +37,31 @@ final class SchedulesViewModel: ObservableObject {
     }
     
     func deleteSchedules() {
-        print("\(selectedSchedules.count) schedules are being deleted")
+        updateLocalList()
+        if let schedules, !schedules.isEmpty, let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            let data = try? JSONEncoder().encode(schedules)
+            try? data?.write(to: scheduleUrl)
+        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            do {
+                try FileManager.default.removeItem(at: scheduleUrl)
+            } catch let error as NSError {
+                dump("Something went really wrong: \(error)")
+            }
+        }
     }
 }
 
 private extension SchedulesViewModel {
     func loadSchedules() -> [Schedule]? {
         return fileManager.loadSchedules()
+    }
+    
+    func updateLocalList() {
+        for selectedSchedule in selectedSchedules {
+            schedules = schedules?.filter { schedule in
+                selectedSchedule.id != schedule.id
+            }
+            selectedSchedules.remove(selectedSchedule)
+        }
     }
 }

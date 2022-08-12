@@ -14,6 +14,7 @@ struct SchedulesView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
+    @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
     init(viewModel: SchedulesViewModel) {
@@ -53,7 +54,6 @@ struct SchedulesView: View {
                 if shouldCreateNewSchedule {
                     Button("schedules_save_cta") {
                         saveSchedule()
-                        shouldCreateNewSchedule = false
                     }
                 } else {
                     HStack {
@@ -91,6 +91,7 @@ private extension SchedulesView {
                 endDate: endDate
             )
         )
+        shouldCreateNewSchedule = false
     }
     
     func deleteSchedules() {
@@ -104,6 +105,7 @@ private extension SchedulesView {
             
             TextField("schedules_create_name_placeholder", text: $scheduleName)
                 .padding(.bottom, 5)
+                .focused($scheduleNameFieldIsFocused)
             
             HStack(spacing: 30) {
                 DatePicker(selection: $startDate, displayedComponents: .date) {
@@ -124,6 +126,27 @@ private extension SchedulesView {
             
             Spacer()
         }
+        .alert(
+            "schedules_save_cta",
+            isPresented: $shouldShowMissingNameAlert) {
+                HStack {
+                    Button(role: .cancel, action: {}) {
+                        Text("schedules_error_cta")
+                    }
+                    
+                    Button(role: .destructive) {
+                        shouldCreateNewSchedule = false
+                    } label: {
+                        Text("schedules_error_discard_cta")
+                    }
+                }
+            } message: {
+                Text("schedules_error_message")
+            }
+        .onAppear {
+            scheduleNameFieldIsFocused = true
+        }
+
     }
     
     func listOfSchedules(schedules: [Schedule]) -> some View {

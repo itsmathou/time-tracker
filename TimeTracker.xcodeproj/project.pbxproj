@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50453DC28A6DE77001556F7 /* Schedule+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */; };
+		B50453DE28A6DEC7001556F7 /* MockFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50453DD28A6DEC7001556F7 /* MockFileManager.swift */; };
 		B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359EE28A02E3200FDF176 /* FileManagement.swift */; };
 		B52359F228A041BE00FDF176 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F128A041BE00FDF176 /* CategoriesView.swift */; };
 		B52359F428A0436B00FDF176 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F328A0436B00FDF176 /* CategoriesViewModel.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+Stub.swift"; sourceTree = "<group>"; };
+		B50453DD28A6DEC7001556F7 /* MockFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileManager.swift; sourceTree = "<group>"; };
 		B52359EE28A02E3200FDF176 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		B52359F128A041BE00FDF176 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		B52359F328A0436B00FDF176 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B52359EE28A02E3200FDF176 /* FileManagement.swift */,
+				B50453DD28A6DEC7001556F7 /* MockFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			children = (
 				B5D34ADC289FF14E00477111 /* Schedule.swift */,
 				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
+				B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */,
 				B5D34AE428A019F000477111 /* SchedulesViewModel.swift */,
 			);
 			path = Schedules;
@@ -338,7 +344,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50453DC28A6DE77001556F7 /* Schedule+Stub.swift in Sources */,
 				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
+				B50453DE28A6DEC7001556F7 /* MockFileManager.swift in Sources */,
 				B52359F928A0468600FDF176 /* EmptyView.swift in Sources */,
 				B52359F428A0436B00FDF176 /* CategoriesViewModel.swift in Sources */,
 				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,

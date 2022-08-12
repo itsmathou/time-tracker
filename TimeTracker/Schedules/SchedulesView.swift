@@ -91,9 +91,11 @@ struct SchedulesView: View {
                         Button("schedules_add_cta") {
                             shouldCreateNewSchedule = true
                         }
-
-                        Button("schedules_delete_cta") {
-                            shouldShowDeletionConfirmation = true
+                        
+                        if !viewModel.selectedSchedules.isEmpty {
+                            Button("schedules_delete_cta") {
+                                shouldShowDeletionConfirmation = true
+                            }
                         }
                     }
                 }

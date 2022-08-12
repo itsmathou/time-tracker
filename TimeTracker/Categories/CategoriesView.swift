@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CategoriesView: View {
-    private let viewModel: Categories
+    @ObservedObject private var viewModel: CategoriesViewModel
     @State private var shouldCreateNewCategory = false
     @State private var categoryName = ""
     
-    init(viewModel: Categories) {
+    init(viewModel: CategoriesViewModel) {
         self.viewModel = viewModel
     }
     
@@ -33,7 +33,10 @@ struct CategoriesView: View {
             if shouldCreateNewCategory {
                 createCategoriesView
             } else if let categories = viewModel.items, !categories.isEmpty {
-                Text("You have \(categories.count) activities")
+                ForEach(categories) { category in
+                    /*@START_MENU_TOKEN@*/Text(category.name)/*@END_MENU_TOKEN@*/
+                        .font(.body)
+                }
             } else {
                 EmptyView(title: "categories_empty_list", iconName: "cloud.bolt.rain")
             }

@@ -11,6 +11,7 @@ final class SchedulesViewModel: ObservableObject {
     private let fileManager: FileManagement
 
     @Published var schedules: [Schedule]?
+    @Published var selectedSchedules = Set<Schedule>()
     
     init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager

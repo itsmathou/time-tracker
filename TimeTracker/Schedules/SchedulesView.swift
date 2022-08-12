@@ -10,6 +10,7 @@ import SwiftUI
 struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false
     @State private var shouldShowMissingNameAlert = false
+    @State private var shouldShowDeletionConfirmation = false
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
@@ -37,7 +38,7 @@ struct SchedulesView: View {
                 createScheduleView
 
             } else if let schedules = viewModel.schedules, !schedules.isEmpty {
-                List(schedules) { schedule in
+                List(schedules, id: \.self, selection: $viewModel.selectedSchedules) { schedule in
                     VStack(alignment: .leading) {
                         Text(schedule.scheduleName)
                             .padding(.bottom, 5)
@@ -55,8 +56,21 @@ struct SchedulesView: View {
                             .frame(height: 1)
                             .foregroundColor(Color.gray.opacity(0.3))
                     }
-                    .padding(.bottom, 30)
                 }
+                .alert("Warning", isPresented: $shouldShowDeletionConfirmation) {
+                    HStack {
+                        Button(role: .destructive, action: {}) {
+                            Text("YOLO")
+                        }
+                        
+                        Button(role: .cancel, action: {}) {
+                            Text("Got it")
+                        }
+                    }
+                } message: {
+                    Text("You're about to delete \(viewModel.selectedSchedules.count) schedules. This action is irreversible")
+                }
+
             } else {
                 EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
                 
@@ -79,7 +93,7 @@ struct SchedulesView: View {
                         }
 
                         Button("schedules_delete_cta") {
-                            print("Delete schedule tapped")
+                            shouldShowDeletionConfirmation = true
                         }
                     }
                 }

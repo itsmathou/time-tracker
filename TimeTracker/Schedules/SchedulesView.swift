@@ -10,6 +10,7 @@ import SwiftUI
 struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false
     @State private var shouldShowMissingNameAlert = false
+    @State private var shouldShowDeletionConfirmation = false
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
@@ -37,26 +38,8 @@ struct SchedulesView: View {
                 createScheduleView
 
             } else if let schedules = viewModel.schedules, !schedules.isEmpty {
-                List(schedules) { schedule in
-                    VStack(alignment: .leading) {
-                        Text(schedule.scheduleName)
-                            .padding(.bottom, 5)
-                        
-                        Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
-                            .padding(.bottom, 5)
-                        
-                        Button {
-                            addActivityTapped()
-                        } label: {
-                            Text("schedules_add_activity_cta")
-                        }
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(Color.gray.opacity(0.3))
-                    }
-                    .padding(.bottom, 30)
-                }
+                listOfSchedules(schedules: schedules)
+
             } else {
                 EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
                 
@@ -73,8 +56,16 @@ struct SchedulesView: View {
                         shouldCreateNewSchedule = false
                     }
                 } else {
-                    Button("schedules_add_cta") {
-                        shouldCreateNewSchedule = true
+                    HStack {
+                        Button("schedules_add_cta") {
+                            shouldCreateNewSchedule = true
+                        }
+                        
+                        if !viewModel.selectedSchedules.isEmpty {
+                            Button("schedules_delete_cta") {
+                                shouldShowDeletionConfirmation = true
+                            }
+                        }
                     }
                 }
             }
@@ -100,6 +91,10 @@ private extension SchedulesView {
                 endDate: endDate
             )
         )
+    }
+    
+    func deleteSchedules() {
+        viewModel.deleteSchedules()
     }
     
     var createScheduleView: some View {
@@ -130,6 +125,41 @@ private extension SchedulesView {
             Spacer()
         }
     }
+    
+    func listOfSchedules(schedules: [Schedule]) -> some View {
+        List(schedules, id: \.self, selection: $viewModel.selectedSchedules) { schedule in
+            VStack(alignment: .leading) {
+                Text(schedule.scheduleName)
+                    .padding(.bottom, 5)
+                
+                Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
+                    .padding(.bottom, 5)
+                
+                Button {
+                    addActivityTapped()
+                } label: {
+                    Text("schedules_add_activity_cta")
+                }
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.gray.opacity(0.3))
+            }
+        }
+        .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
+            HStack {
+                Button(role: .destructive, action: deleteSchedules) {
+                    Text("schedules_delete_alert_confirmation_cta")
+                }
+                
+                Button(role: .cancel, action: {}) {
+                    Text("schedules_delete_alert_cancel_cta")
+                }
+            }
+        } message: {
+            Text("schedules_delete_alert_message \(viewModel.selectedSchedules.count.formatted(.number))")
+        }
+    }
 }
 
 struct SchedulesView_Previews: PreviewProvider {
@@ -137,41 +167,3 @@ struct SchedulesView_Previews: PreviewProvider {
         SchedulesView(viewModel: SchedulesViewModel(fileManager: MockFileManager(schedules: nil)))
     }
 }
-
-#if DEBUG
-extension Schedule {
-    static let firstStubSchedule: Self = .init(
-        id: UUID(),
-        scheduleName: "July 2021",
-        startDate: Date.create(day: 1, month: 7, year: 2021)!,
-        endDate: Date.create(day: 31, month: 7, year: 2021)!
-    )
-    
-    static let secondStubSchedule: Self = .init(
-        id: UUID(),
-        scheduleName: "August 2021",
-        startDate: Date.create(day: 1, month: 8, year: 2021)!,
-        endDate: Date.create(day: 31, month: 8, year: 2021)!
-    )
-}
-
-final class MockFileManager: FileManagement {
-    private let schedules: [Schedule]?
-
-    init(schedules: [Schedule]?) {
-        self.schedules = schedules
-    }
-
-    func loadSchedules() -> [Schedule]? {
-        return schedules
-    }
-    
-    func loadCategories() -> [Category]? {
-        return nil
-    }
-    
-    func documentUrl(for file: FileName) -> URL? {
-        return nil
-    }
-}
-#endif

@@ -29,6 +29,7 @@
 "schedules_error_title" = "Schedule name is missing";
 "schedules_error_message" = "A name for your schedule is required before saving it.";
 "schedules_error_cta" = "OK";
+"schedules_error_discard_cta" = "Discard";
 
 "categories_title" = "My categories";
 "categories_add_category_cta" = "New category";

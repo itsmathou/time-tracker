@@ -93,6 +93,10 @@ private extension SchedulesView {
         )
     }
     
+    func deleteSchedules() {
+        viewModel.deleteSchedules()
+    }
+    
     var createScheduleView: some View {
         VStack(alignment: .leading) {
             Text("schedules_create_description")
@@ -144,7 +148,7 @@ private extension SchedulesView {
         }
         .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
             HStack {
-                Button(role: .destructive, action: {}) {
+                Button(role: .destructive, action: deleteSchedules) {
                     Text("schedules_delete_alert_confirmation_cta")
                 }
                 

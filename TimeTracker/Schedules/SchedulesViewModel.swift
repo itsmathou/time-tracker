@@ -35,6 +35,10 @@ final class SchedulesViewModel: ObservableObject {
             fatalError("Something went really wrong")
         }
     }
+    
+    func deleteSchedules() {
+        print("\(selectedSchedules.count) schedules are being deleted")
+    }
 }
 
 private extension SchedulesViewModel {

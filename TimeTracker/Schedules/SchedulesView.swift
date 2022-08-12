@@ -14,6 +14,7 @@ struct SchedulesView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
+    @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
     init(viewModel: SchedulesViewModel) {
@@ -104,6 +105,7 @@ private extension SchedulesView {
             
             TextField("schedules_create_name_placeholder", text: $scheduleName)
                 .padding(.bottom, 5)
+                .focused($scheduleNameFieldIsFocused)
             
             HStack(spacing: 30) {
                 DatePicker(selection: $startDate, displayedComponents: .date) {
@@ -123,6 +125,9 @@ private extension SchedulesView {
                 .padding(.bottom, 10)
             
             Spacer()
+        }
+        .onAppear {
+            scheduleNameFieldIsFocused = true
         }
     }
     

@@ -13,9 +13,9 @@ struct SchedulesView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
-    private let viewModel: Schedules
+    @ObservedObject private var viewModel: SchedulesViewModel
     
-    init(viewModel: Schedules) {
+    init(viewModel: SchedulesViewModel) {
         self.viewModel = viewModel
     }
     
@@ -134,32 +134,44 @@ private extension SchedulesView {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulesView(viewModel: MockSchedulesViewModel(isEmpty: true))
+        SchedulesView(viewModel: SchedulesViewModel(fileManager: MockFileManager(schedules: nil)))
     }
 }
 
 #if DEBUG
-final class MockSchedulesViewModel: Schedules {
-    var schedules: [Schedule]?
+extension Schedule {
+    static let firstStubSchedule: Self = .init(
+        id: UUID(),
+        scheduleName: "July 2021",
+        startDate: Date.create(day: 1, month: 7, year: 2021)!,
+        endDate: Date.create(day: 31, month: 7, year: 2021)!
+    )
     
-    init(isEmpty: Bool) {
-        let mockSchedules = [
-            Schedule(
-                id: UUID(),
-                scheduleName: "July 2021",
-                startDate: Date.create(day: 1, month: 7, year: 2021)!,
-                endDate: Date.create(day: 31, month: 7, year: 2021)!
-            ),
-            Schedule(
-                id: UUID(),
-                scheduleName: "August 2021",
-                startDate: Date.create(day: 1, month: 8, year: 2021)!,
-                endDate: Date.create(day: 31, month: 8, year: 2021)!
-            )
-        ]
-        schedules = isEmpty ? nil : mockSchedules
+    static let secondStubSchedule: Self = .init(
+        id: UUID(),
+        scheduleName: "August 2021",
+        startDate: Date.create(day: 1, month: 8, year: 2021)!,
+        endDate: Date.create(day: 31, month: 8, year: 2021)!
+    )
+}
+
+final class MockFileManager: FileManagement {
+    private let schedules: [Schedule]?
+
+    init(schedules: [Schedule]?) {
+        self.schedules = schedules
+    }
+
+    func loadSchedules() -> [Schedule]? {
+        return schedules
     }
     
-    func save(schedule: Schedule) {}
+    func loadCategories() -> [Category]? {
+        return nil
+    }
+    
+    func documentUrl(for file: FileName) -> URL? {
+        return nil
+    }
 }
 #endif

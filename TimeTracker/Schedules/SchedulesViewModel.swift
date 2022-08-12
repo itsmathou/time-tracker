@@ -7,15 +7,10 @@
 
 import Foundation
 
-protocol Schedules {
-    var schedules: [Schedule]? { get }
-    func save(schedule: Schedule)
-}
-
-final class SchedulesViewModel: Schedules {
+final class SchedulesViewModel: ObservableObject {
     private let fileManager: FileManagement
 
-    var schedules: [Schedule]?
+    @Published var schedules: [Schedule]?
     
     init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
@@ -29,10 +24,12 @@ final class SchedulesViewModel: Schedules {
             newListOfSchedules.append(schedule)
             let data = try? JSONEncoder().encode(newListOfSchedules)
             try? data?.write(to: scheduleUrl)
+            schedules = newListOfSchedules
         } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
             let model = [schedule]
             let data = try? JSONEncoder().encode(model)
             try? data?.write(to: scheduleUrl)
+            schedules = model
         } else {
             fatalError("Something went really wrong")
         }

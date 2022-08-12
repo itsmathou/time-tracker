@@ -20,6 +20,7 @@
 "schedules_create_end" = "End date";
 "schedules_create_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
 "schedules_add_cta" = "Create schedule";
+"schedules_delete_cta" = "Delete schedule(s)";
 "schedules_save_cta" = "Save schedule";
 "schedules_error_title" = "Schedule name is missing";
 "schedules_error_message" = "A name for your schedule is required before saving it.";

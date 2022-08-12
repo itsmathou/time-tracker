@@ -73,8 +73,14 @@ struct SchedulesView: View {
                         shouldCreateNewSchedule = false
                     }
                 } else {
-                    Button("schedules_add_cta") {
-                        shouldCreateNewSchedule = true
+                    HStack {
+                        Button("schedules_add_cta") {
+                            shouldCreateNewSchedule = true
+                        }
+
+                        Button("schedules_delete_cta") {
+                            print("Delete schedule tapped")
+                        }
                     }
                 }
             }

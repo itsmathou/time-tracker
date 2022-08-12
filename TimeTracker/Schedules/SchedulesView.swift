@@ -57,18 +57,18 @@ struct SchedulesView: View {
                             .foregroundColor(Color.gray.opacity(0.3))
                     }
                 }
-                .alert("Warning", isPresented: $shouldShowDeletionConfirmation) {
+                .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
                     HStack {
                         Button(role: .destructive, action: {}) {
-                            Text("YOLO")
+                            Text("schedules_delete_alert_confirmation_cta")
                         }
                         
                         Button(role: .cancel, action: {}) {
-                            Text("Got it")
+                            Text("schedules_delete_alert_cancel_cta")
                         }
                     }
                 } message: {
-                    Text("You're about to delete \(viewModel.selectedSchedules.count) schedules. This action is irreversible")
+                    Text("schedules_delete_alert_message \(viewModel.selectedSchedules.count.formatted(.number))")
                 }
 
             } else {

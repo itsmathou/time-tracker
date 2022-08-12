@@ -21,6 +21,10 @@
 "schedules_create_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
 "schedules_add_cta" = "Create schedule";
 "schedules_delete_cta" = "Delete schedule(s)";
+"schedules_delete_alert_title" = "Warning";
+"schedules_delete_alert_message %@" = "You're about to delete %@ schedule(s). This action is irreversible.";
+"schedules_delete_alert_cancel_cta" = "Got it";
+"schedules_delete_alert_confirmation_cta" = "Confirm";
 "schedules_save_cta" = "Save schedule";
 "schedules_error_title" = "Schedule name is missing";
 "schedules_error_message" = "A name for your schedule is required before saving it.";

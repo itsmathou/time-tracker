@@ -38,38 +38,7 @@ struct SchedulesView: View {
                 createScheduleView
 
             } else if let schedules = viewModel.schedules, !schedules.isEmpty {
-                List(schedules, id: \.self, selection: $viewModel.selectedSchedules) { schedule in
-                    VStack(alignment: .leading) {
-                        Text(schedule.scheduleName)
-                            .padding(.bottom, 5)
-                        
-                        Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
-                            .padding(.bottom, 5)
-                        
-                        Button {
-                            addActivityTapped()
-                        } label: {
-                            Text("schedules_add_activity_cta")
-                        }
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                            .foregroundColor(Color.gray.opacity(0.3))
-                    }
-                }
-                .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
-                    HStack {
-                        Button(role: .destructive, action: {}) {
-                            Text("schedules_delete_alert_confirmation_cta")
-                        }
-                        
-                        Button(role: .cancel, action: {}) {
-                            Text("schedules_delete_alert_cancel_cta")
-                        }
-                    }
-                } message: {
-                    Text("schedules_delete_alert_message \(viewModel.selectedSchedules.count.formatted(.number))")
-                }
+                listOfSchedules(schedules: schedules)
 
             } else {
                 EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
@@ -150,6 +119,41 @@ private extension SchedulesView {
                 .padding(.bottom, 10)
             
             Spacer()
+        }
+    }
+    
+    func listOfSchedules(schedules: [Schedule]) -> some View {
+        List(schedules, id: \.self, selection: $viewModel.selectedSchedules) { schedule in
+            VStack(alignment: .leading) {
+                Text(schedule.scheduleName)
+                    .padding(.bottom, 5)
+                
+                Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
+                    .padding(.bottom, 5)
+                
+                Button {
+                    addActivityTapped()
+                } label: {
+                    Text("schedules_add_activity_cta")
+                }
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.gray.opacity(0.3))
+            }
+        }
+        .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
+            HStack {
+                Button(role: .destructive, action: {}) {
+                    Text("schedules_delete_alert_confirmation_cta")
+                }
+                
+                Button(role: .cancel, action: {}) {
+                    Text("schedules_delete_alert_cancel_cta")
+                }
+            }
+        } message: {
+            Text("schedules_delete_alert_message \(viewModel.selectedSchedules.count.formatted(.number))")
         }
     }
 }

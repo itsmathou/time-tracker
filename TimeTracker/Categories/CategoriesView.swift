@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoriesView: View {
     @ObservedObject private var viewModel: CategoriesViewModel
     @State private var shouldCreateNewCategory = false
+    @State private var shouldShowIconSelection = false
     @State private var categoryName = ""
     
     init(viewModel: CategoriesViewModel) {
@@ -85,11 +86,15 @@ private extension CategoriesView {
             TextField("categories_textfield_placeholder", text: $categoryName)
             
             Button {
-                print("tapped")
+                shouldShowIconSelection = true
             } label: {
                 Text("categories_pick_icon_cta")
             }
             .buttonStyle(.borderless)
+            .popover(isPresented: $shouldShowIconSelection) {
+                Text("This is a popover")
+                    .padding()
+            }
         }
     }
 }

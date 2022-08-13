@@ -12,6 +12,7 @@ struct CategoriesView: View {
     @State private var shouldCreateNewCategory = false
     @State private var shouldShowIconSelection = false
     @State private var categoryName = ""
+    @State private var iconName = "heart.fill"
     
     init(viewModel: CategoriesViewModel) {
         self.viewModel = viewModel
@@ -60,7 +61,8 @@ struct CategoriesView: View {
                             guard !categoryName.isEmpty else {
                                 return
                             }
-                            viewModel.save(category: categoryName)
+                            print("categoryName: \(categoryName), iconName: \(iconName)")
+//                            viewModel.save(category: categoryName)
                             shouldCreateNewCategory = false
                         }
                         
@@ -92,8 +94,11 @@ private extension CategoriesView {
             }
             .buttonStyle(.borderless)
             .popover(isPresented: $shouldShowIconSelection) {
-                IconSelectionView()
-                    .padding()
+                IconSelectionView(
+                    selectedIconName: $iconName,
+                    shouldBeDismissed: $shouldShowIconSelection
+                )
+                .padding()
             }
         }
     }

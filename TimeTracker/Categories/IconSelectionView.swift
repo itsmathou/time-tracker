@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct IconSelectionView: View {
-    @State var selectedIconName: String = ""
+    @Binding var selectedIconName: String
+    @Binding var shouldBeDismissed: Bool
 
     let iconNames = [
         "heart.fill", "globe.europe.africa.fill", "leaf.fill", "pawprint.fill",
@@ -36,6 +37,7 @@ struct IconSelectionView: View {
                     .cornerRadius(3)
                     .onTapGesture {
                         selectedIconName = iconName
+                        shouldBeDismissed.toggle()
                     }
             }
         }
@@ -44,6 +46,9 @@ struct IconSelectionView: View {
 
 struct IconSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        IconSelectionView()
+        IconSelectionView(
+            selectedIconName: .constant("heart.fill"),
+            shouldBeDismissed: .constant(false)
+        )
     }
 }

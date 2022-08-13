@@ -10,7 +10,9 @@ import SwiftUI
 struct CategoriesView: View {
     @ObservedObject private var viewModel: CategoriesViewModel
     @State private var shouldCreateNewCategory = false
+    @State private var shouldShowIconSelection = false
     @State private var categoryName = ""
+    @State private var iconName = "heart.fill"
     
     init(viewModel: CategoriesViewModel) {
         self.viewModel = viewModel
@@ -34,8 +36,12 @@ struct CategoriesView: View {
                 createCategoriesView
             } else if let categories = viewModel.items, !categories.isEmpty {
                 ForEach(categories) { category in
-                    /*@START_MENU_TOKEN@*/Text(category.name)/*@END_MENU_TOKEN@*/
-                        .font(.body)
+                    HStack {
+                        iconView(category.iconName)
+                        
+                        Text(category.name)
+                            .font(.body)
+                    }
                 }
             } else {
                 HStack {
@@ -59,7 +65,7 @@ struct CategoriesView: View {
                             guard !categoryName.isEmpty else {
                                 return
                             }
-                            viewModel.save(category: categoryName)
+                            viewModel.save(category: categoryName, iconName: iconName)
                             shouldCreateNewCategory = false
                         }
                         
@@ -81,7 +87,37 @@ struct CategoriesView: View {
 
 private extension CategoriesView {
     var createCategoriesView: some View {
-        TextField("categories_textfield_placeholder", text: $categoryName)
+        VStack(alignment: .leading, spacing: 20) {
+            TextField("categories_textfield_placeholder", text: $categoryName)
+            
+            HStack {
+                Button {
+                    shouldShowIconSelection = true
+                } label: {
+                    Text("categories_pick_icon_cta")
+                }
+                .buttonStyle(.borderless)
+                .popover(isPresented: $shouldShowIconSelection) {
+                    IconSelectionView(
+                        selectedIconName: $iconName,
+                        shouldBeDismissed: $shouldShowIconSelection
+                    )
+                    .padding()
+                }
+                
+                iconView(iconName)
+            }
+        }
+    }
+    
+    func iconView(_ iconName: String) -> some View {
+        ZStack {
+            Circle()
+                .foregroundColor(.gray.opacity(0.5))
+                .frame(width: 30, height: 30)
+            
+            Image(systemName: iconName)
+        }
     }
 }
 

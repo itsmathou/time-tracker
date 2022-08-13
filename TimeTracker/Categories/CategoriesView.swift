@@ -92,7 +92,7 @@ private extension CategoriesView {
             }
             .buttonStyle(.borderless)
             .popover(isPresented: $shouldShowIconSelection) {
-                Text("This is a popover")
+                IconSelectionView()
                     .padding()
             }
         }

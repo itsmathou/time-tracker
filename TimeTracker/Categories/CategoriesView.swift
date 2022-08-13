@@ -84,21 +84,31 @@ struct CategoriesView: View {
 
 private extension CategoriesView {
     var createCategoriesView: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 20) {
             TextField("categories_textfield_placeholder", text: $categoryName)
             
-            Button {
-                shouldShowIconSelection = true
-            } label: {
-                Text("categories_pick_icon_cta")
-            }
-            .buttonStyle(.borderless)
-            .popover(isPresented: $shouldShowIconSelection) {
-                IconSelectionView(
-                    selectedIconName: $iconName,
-                    shouldBeDismissed: $shouldShowIconSelection
-                )
-                .padding()
+            HStack {
+                Button {
+                    shouldShowIconSelection = true
+                } label: {
+                    Text("categories_pick_icon_cta")
+                }
+                .buttonStyle(.borderless)
+                .popover(isPresented: $shouldShowIconSelection) {
+                    IconSelectionView(
+                        selectedIconName: $iconName,
+                        shouldBeDismissed: $shouldShowIconSelection
+                    )
+                    .padding()
+                }
+                
+                ZStack {
+                    Circle()
+                        .foregroundColor(.gray)
+                        .frame(width: 30, height: 30)
+                    
+                    Image(systemName: iconName)
+                }
             }
         }
     }

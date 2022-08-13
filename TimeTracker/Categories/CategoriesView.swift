@@ -36,8 +36,12 @@ struct CategoriesView: View {
                 createCategoriesView
             } else if let categories = viewModel.items, !categories.isEmpty {
                 ForEach(categories) { category in
-                    /*@START_MENU_TOKEN@*/Text(category.name)/*@END_MENU_TOKEN@*/
-                        .font(.body)
+                    HStack {
+                        iconView(category.iconName)
+                        
+                        Text(category.name)
+                            .font(.body)
+                    }
                 }
             } else {
                 HStack {
@@ -101,14 +105,18 @@ private extension CategoriesView {
                     .padding()
                 }
                 
-                ZStack {
-                    Circle()
-                        .foregroundColor(.gray)
-                        .frame(width: 30, height: 30)
-                    
-                    Image(systemName: iconName)
-                }
+                iconView(iconName)
             }
+        }
+    }
+    
+    func iconView(_ iconName: String) -> some View {
+        ZStack {
+            Circle()
+                .foregroundColor(.gray.opacity(0.5))
+                .frame(width: 30, height: 30)
+            
+            Image(systemName: iconName)
         }
     }
 }

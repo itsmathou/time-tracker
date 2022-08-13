@@ -15,7 +15,7 @@ struct IconSelectionView: View {
         "heart.fill", "globe.europe.africa.fill", "leaf.fill", "pawprint.fill",
         "pencil", "gamecontroller.fill", "pc", "headphones", "sparkles.tv.fill",
         "airplane", "bicycle", "figure.walk", "play.rectangle.fill", "bag.fill",
-        "book.closed"
+        "books.vertical.fill", "building.fill", "ticket.fill", "suitcase.fill"
     ]
     
     let columns = [

@@ -61,8 +61,7 @@ struct CategoriesView: View {
                             guard !categoryName.isEmpty else {
                                 return
                             }
-                            print("categoryName: \(categoryName), iconName: \(iconName)")
-//                            viewModel.save(category: categoryName)
+                            viewModel.save(category: categoryName, iconName: iconName)
                             shouldCreateNewCategory = false
                         }
                         

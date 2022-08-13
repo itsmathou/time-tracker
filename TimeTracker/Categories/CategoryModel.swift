@@ -10,4 +10,5 @@ import Foundation
 struct Category: Identifiable, Codable {
     let id: UUID
     let name: String
+    let iconName: String
 }

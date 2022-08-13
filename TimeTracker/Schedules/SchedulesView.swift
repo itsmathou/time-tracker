@@ -42,7 +42,13 @@ struct SchedulesView: View {
                 listOfSchedules(schedules: schedules)
 
             } else {
-                EmptyView(title: "schedules_empty_list", iconName: "cloud.bolt.rain")
+                HStack {
+                    Spacer()
+                    
+                    EmptyView(title: "schedules_empty_list", iconName: "calendar.badge.exclamationmark")
+                    
+                    Spacer()
+                }
                 
                 Spacer()
             }
@@ -52,14 +58,23 @@ struct SchedulesView: View {
         .toolbar {
             ToolbarItem {
                 if shouldCreateNewSchedule {
-                    Button("schedules_save_cta") {
-                        saveSchedule()
+                    HStack {
+                        Button("schedules_save_cta") {
+                            saveSchedule()
+                        }
+                        
+                        Button("schedules_cancel_cta") {
+                            shouldCreateNewSchedule = false
+                        }
                     }
                 } else {
                     HStack {
-                        Button("schedules_add_cta") {
+                        Button {
                             shouldCreateNewSchedule = true
+                        } label: {
+                            Image(systemName: "plus")
                         }
+
                         
                         if !viewModel.selectedSchedules.isEmpty {
                             Button("schedules_delete_cta") {

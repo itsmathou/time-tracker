@@ -7,7 +7,7 @@
 */
 
 "app_title" = "Activity Tracker";
-"sidebar_section_first" = "Schedules and activities";
+"sidebar_section_first" = "Schedules and categories";
 
 "schedules_list_title" = "My schedules";
 "schedules_empty_list" = "You don't have any schedules at the moment.";
@@ -34,5 +34,6 @@
 "categories_title" = "My categories";
 "categories_cancel_cta" = "Cancel";
 "categories_textfield_placeholder" = "Create a new category";
+"categories_pick_icon_cta" = "Pick an icon";
 "categories_save_category_cta" = "Save category";
 "categories_empty_list" = "You don't have any categories at the moment.";

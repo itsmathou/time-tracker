@@ -81,7 +81,16 @@ struct CategoriesView: View {
 
 private extension CategoriesView {
     var createCategoriesView: some View {
-        TextField("categories_textfield_placeholder", text: $categoryName)
+        HStack {
+            TextField("categories_textfield_placeholder", text: $categoryName)
+            
+            Button {
+                print("tapped")
+            } label: {
+                Text("categories_pick_icon_cta")
+            }
+            .buttonStyle(.borderless)
+        }
     }
 }
 

@@ -23,7 +23,7 @@ struct ContentView: View {
                     NavigationLink(tag: Item.myCategories, selection: $item) {
                         CategoriesView(viewModel: CategoriesViewModel())
                     } label: {
-                        sidebarLabel("categories_title", iconName: "guitars.fill")
+                        sidebarLabel("categories_title", iconName: "folder")
                     }
                 }
                 .headerProminence(.increased)
@@ -38,8 +38,7 @@ private extension ContentView {
     func sidebarLabel(_ title: String.LocalizationValue, iconName: String) -> some View {
         HStack {
             Image(systemName: iconName)
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.white, .red)
+                .symbolRenderingMode(.monochrome)
             
             Text(String(localized: title))
         }

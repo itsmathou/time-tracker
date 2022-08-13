@@ -12,11 +12,12 @@ struct EmptyView: View {
     let iconName: String
     
     var body: some View {
-        HStack {
+        VStack {
             Image(systemName: iconName)
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .teal, .white)
-                .font(.body)
+                .padding(.bottom, 10)
+                .font(.title)
             
             Text(String(localized: title))
                 .font(.body)
@@ -26,6 +27,6 @@ struct EmptyView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView(title: "activities_empty_list", iconName: "cloud.bolt.rain")
+        EmptyView(title: "categories_empty_list", iconName: "folder.badge.questionmark")
     }
 }

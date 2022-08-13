@@ -19,7 +19,7 @@
 "schedules_create_start" = "Start date";
 "schedules_create_end" = "End date";
 "schedules_create_summary %@ %@" = "Your schedule will start on %@ and end on %@.";
-"schedules_add_cta" = "Create schedule";
+"schedules_cancel_cta" = "Cancel";
 "schedules_delete_cta" = "Delete schedule(s)";
 "schedules_delete_alert_title" = "Warning";
 "schedules_delete_alert_message %@" = "You're about to delete %@ schedule(s). This action is irreversible.";
@@ -32,7 +32,7 @@
 "schedules_error_discard_cta" = "Discard";
 
 "categories_title" = "My categories";
-"categories_add_category_cta" = "New category";
+"categories_cancel_cta" = "Cancel";
 "categories_textfield_placeholder" = "Create a new category";
 "categories_save_category_cta" = "Save category";
 "categories_empty_list" = "You don't have any categories at the moment.";

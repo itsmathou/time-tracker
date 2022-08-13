@@ -38,7 +38,13 @@ struct CategoriesView: View {
                         .font(.body)
                 }
             } else {
-                EmptyView(title: "categories_empty_list", iconName: "cloud.bolt.rain")
+                HStack {
+                    Spacer()
+                    
+                    EmptyView(title: "categories_empty_list", iconName: "folder.badge.questionmark")
+                    
+                    Spacer()
+                }
             }
             
             Spacer()
@@ -48,16 +54,24 @@ struct CategoriesView: View {
         .toolbar {
             ToolbarItem {
                 if shouldCreateNewCategory {
-                    Button("categories_save_category_cta") {
-                        guard !categoryName.isEmpty else {
-                            return
+                    HStack {
+                        Button("categories_save_category_cta") {
+                            guard !categoryName.isEmpty else {
+                                return
+                            }
+                            viewModel.save(category: categoryName)
+                            shouldCreateNewCategory = false
                         }
-                        viewModel.save(category: categoryName)
-                        shouldCreateNewCategory = false
+                        
+                        Button("categories_cancel_cta") {
+                            shouldCreateNewCategory = false
+                        }
                     }
                 } else {
-                    Button("categories_add_category_cta") {
+                    Button {
                         shouldCreateNewCategory = true
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
             }

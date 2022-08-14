@@ -153,7 +153,6 @@ private extension SchedulesView {
         .onAppear {
             scheduleNameFieldIsFocused = true
         }
-
     }
     
     func listOfSchedules(schedules: [Schedule]) -> some View {

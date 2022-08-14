@@ -37,7 +37,7 @@ struct CategoriesView: View {
             } else if let categories = viewModel.items, !categories.isEmpty {
                 ForEach(categories) { category in
                     HStack {
-                        iconView(category.iconName)
+                        IconView(category.iconName)
                         
                         Text(category.name)
                             .font(.body)
@@ -105,18 +105,8 @@ private extension CategoriesView {
                     .padding()
                 }
                 
-                iconView(iconName)
+                IconView(iconName)
             }
-        }
-    }
-    
-    func iconView(_ iconName: String) -> some View {
-        ZStack {
-            Circle()
-                .foregroundColor(.gray.opacity(0.5))
-                .frame(width: 30, height: 30)
-            
-            Image(systemName: iconName)
         }
     }
 }

@@ -158,42 +158,7 @@ private extension SchedulesView {
     
     func listOfSchedules(schedules: [Schedule]) -> some View {
         List(schedules, id: \.self, selection: $viewModel.selectedSchedules) { schedule in
-            VStack(alignment: .leading) {
-                Text(schedule.scheduleName)
-                    .padding(.bottom, 5)
-                
-                Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
-                    .padding(.bottom, 5)
-                
-                VStack {
-                    if !schedule.activities.isEmpty {
-                        Text("You have activities")
-                    }
-                    
-                    Button {
-                        addActivityTapped()
-                    } label: {
-                        Text("schedules_add_activity_cta")
-                    }
-                    .popover(
-                        isPresented: $shouldShowAddActivity
-                    ) {
-                        AddActivityView(
-                            categories: viewModel.categories,
-                            schedule: schedule,
-                            selectedCategory: $viewModel.selectedCategory,
-                            date: $viewModel.activityDate,
-                            isPresented: $shouldShowAddActivity,
-                            saveActivity: viewModel.handle
-                        )
-                        .padding()
-                    }
-                }
-                
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(Color.gray.opacity(0.3))
-            }
+            ScheduleItemView(schedule: schedule, viewModel: viewModel)
         }
         .alert("schedules_delete_alert_title", isPresented: $shouldShowDeletionConfirmation) {
             HStack {

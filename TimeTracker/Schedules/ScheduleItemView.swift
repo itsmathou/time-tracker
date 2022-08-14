@@ -21,9 +21,27 @@ struct ScheduleItemView: View {
             Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
                 .padding(.bottom, 5)
             
-            VStack {
+            VStack(alignment: .leading) {
+                let activityList = schedule.getActivitiesByCategory()
                 if !schedule.activities.isEmpty {
-                    Text("You have activities")
+                    ForEach(activityList) { activity in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                IconView("heart.fill")
+                                
+                                Text(activity.categoryName)
+                                    .font(.title2)
+                            }
+                            
+                            ForEach(activity.activities) { item in
+                                Text(item.date.formatted(date: .complete, time: .omitted))
+                                    .font(.body)
+                                    .padding(.bottom, 2)
+                                    .padding(.leading, 20)
+                            }
+                        }
+                        .padding(.bottom, 5)
+                    }
                 }
                 
                 Button {
@@ -55,6 +73,13 @@ struct ScheduleItemView: View {
 
 struct ScheduleItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleItemView(schedule: .firstStubSchedule, viewModel: SchedulesViewModel(fileManager: MockFileManager(schedules: [.firstStubSchedule])))
+        ScheduleItemView(
+            schedule: .firstStubSchedule,
+            viewModel: SchedulesViewModel(
+                fileManager: MockFileManager(
+                    schedules: [.firstStubSchedule]
+                )
+            )
+        )
     }
 }

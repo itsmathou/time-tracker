@@ -37,3 +37,8 @@
 "categories_pick_icon_cta" = "Pick an icon";
 "categories_save_category_cta" = "Save category";
 "categories_empty_list" = "You don't have any categories at the moment.";
+
+"add_activity_date" = "Date";
+"add_activity_category" = "Category";
+"add_activity_save_cta" = "Save";
+"add_activity_default_category" = "Uncategorised";

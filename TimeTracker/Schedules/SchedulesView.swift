@@ -11,6 +11,7 @@ struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false
     @State private var shouldShowMissingNameAlert = false
     @State private var shouldShowDeletionConfirmation = false
+    @State private var shouldShowAddActivity = false
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
@@ -90,7 +91,7 @@ struct SchedulesView: View {
 
 private extension SchedulesView {    
     func addActivityTapped() {
-        print("Activity button tapped")
+        shouldShowAddActivity = true
     }
     
     func saveSchedule() {
@@ -103,7 +104,8 @@ private extension SchedulesView {
                 id: UUID(),
                 scheduleName: scheduleName,
                 startDate: startDate,
-                endDate: endDate
+                endDate: endDate,
+                activities: []
             )
         )
         shouldCreateNewSchedule = false
@@ -173,10 +175,29 @@ private extension SchedulesView {
                 Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
                     .padding(.bottom, 5)
                 
-                Button {
-                    addActivityTapped()
-                } label: {
-                    Text("schedules_add_activity_cta")
+                VStack {
+                    if !schedule.activities.isEmpty {
+                        Text("You have activities")
+                    }
+                    
+                    Button {
+                        addActivityTapped()
+                    } label: {
+                        Text("schedules_add_activity_cta")
+                    }
+                    .popover(
+                        isPresented: $shouldShowAddActivity
+                    ) {
+                        AddActivityView(
+                            categories: viewModel.categories,
+                            schedule: schedule,
+                            selectedCategory: $viewModel.selectedCategory,
+                            date: $viewModel.activityDate,
+                            isPresented: $shouldShowAddActivity,
+                            saveActivity: viewModel.handle
+                        )
+                        .padding()
+                    }
                 }
                 
                 Rectangle()

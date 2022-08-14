@@ -12,4 +12,5 @@ struct Schedule: Codable, Identifiable, Hashable {
     let scheduleName: String
     let startDate: Date
     let endDate: Date
+    let activities: [Activity]
 }

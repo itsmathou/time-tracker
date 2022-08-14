@@ -11,9 +11,12 @@ struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false
     @State private var shouldShowMissingNameAlert = false
     @State private var shouldShowDeletionConfirmation = false
+    @State private var shouldShowAddActivity = false
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
+    @State private var selectedCategory: Category?
+    @State private var activityDate = Date()
     @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
@@ -90,7 +93,7 @@ struct SchedulesView: View {
 
 private extension SchedulesView {    
     func addActivityTapped() {
-        print("Activity button tapped")
+        shouldShowAddActivity = true
     }
     
     func saveSchedule() {
@@ -103,7 +106,8 @@ private extension SchedulesView {
                 id: UUID(),
                 scheduleName: scheduleName,
                 startDate: startDate,
-                endDate: endDate
+                endDate: endDate,
+                activities: []
             )
         )
         shouldCreateNewSchedule = false
@@ -177,6 +181,17 @@ private extension SchedulesView {
                     addActivityTapped()
                 } label: {
                     Text("schedules_add_activity_cta")
+                }
+                .popover(
+                    isPresented: $shouldShowAddActivity
+                ) {
+                    AddActivityView(
+                        categories: [],
+                        selectedCategory: $selectedCategory,
+                        date: $activityDate,
+                        isPresented: $shouldShowAddActivity
+                    )
+                    .padding()
                 }
                 
                 Rectangle()

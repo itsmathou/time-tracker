@@ -9,9 +9,10 @@ import SwiftUI
 
 struct AddActivityView: View {
     let categories: [Category]
-    @Binding var selectedCategory: Category
+    @Binding var selectedCategory: Category?
     @Binding var date: Date
     @Binding var isPresented: Bool
+
     var body: some View {
         VStack(alignment: .leading) {
             DatePicker(

@@ -22,6 +22,7 @@
 		B57014EB289FD5DF00B17EA4 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */; };
 		B57014F5289FD5DF00B17EA4 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */; };
 		B57014F7289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */; };
+		B5BAC2F428A90D0200DEBFE7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC2F328A90D0200DEBFE7 /* Activity.swift */; };
 		B5CA8C1E28A814DD001FF5C4 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA8C1D28A814DD001FF5C4 /* IconSelectionView.swift */; };
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 		B5D34ADD289FF14E00477111 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* Schedule.swift */; };
@@ -67,6 +68,7 @@
 		B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
 		B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5BAC2F328A90D0200DEBFE7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B5CA8C1D28A814DD001FF5C4 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5D34ADC289FF14E00477111 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -152,15 +154,16 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				B52359F728A0467500FDF176 /* Shared */,
+				B5BAC2F228A90CCE00DEBFE7 /* Activity */,
 				B52359F028A0419D00FDF176 /* Categories */,
-				B52359ED28A02E2000FDF176 /* Utilities */,
-				B5D34AF828A0222D00477111 /* Extensions */,
-				B5D34AE128A00D2F00477111 /* Schedules */,
-				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
 				B57014DA289FD5DE00B17EA4 /* ContentView.swift */,
-				B57014DE289FD5DF00B17EA4 /* TimeTracker.entitlements */,
+				B5D34AF828A0222D00477111 /* Extensions */,
 				B57014DF289FD5DF00B17EA4 /* Preview Content */,
+				B5D34AE128A00D2F00477111 /* Schedules */,
+				B52359F728A0467500FDF176 /* Shared */,
+				B57014DE289FD5DF00B17EA4 /* TimeTracker.entitlements */,
+				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
+				B52359ED28A02E2000FDF176 /* Utilities */,
 			);
 			path = TimeTracker;
 			sourceTree = "<group>";
@@ -190,6 +193,15 @@
 			path = TimeTrackerUITests;
 			sourceTree = "<group>";
 		};
+		B5BAC2F228A90CCE00DEBFE7 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				B51DD5F728A83EA300DF23CB /* AddActivityView.swift */,
+				B5BAC2F328A90D0200DEBFE7 /* Activity.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		B5D34AD6289FE68300477111 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				B5D34ADC289FF14E00477111 /* Schedule.swift */,
-				B51DD5F728A83EA300DF23CB /* AddActivityView.swift */,
 				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
 				B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */,
 				B5D34AE428A019F000477111 /* SchedulesViewModel.swift */,
@@ -356,6 +367,7 @@
 				B52359F928A0468600FDF176 /* EmptyView.swift in Sources */,
 				B5CA8C1E28A814DD001FF5C4 /* IconSelectionView.swift in Sources */,
 				B52359F428A0436B00FDF176 /* CategoriesViewModel.swift in Sources */,
+				B5BAC2F428A90D0200DEBFE7 /* Activity.swift in Sources */,
 				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,

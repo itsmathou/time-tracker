@@ -14,8 +14,3 @@ struct Schedule: Codable, Identifiable, Hashable {
     let endDate: Date
     let activities: [Activity]
 }
-
-struct Activity: Codable, Hashable {
-    let date: Date
-    let category: Category
-}

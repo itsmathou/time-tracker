@@ -9,9 +9,11 @@ import SwiftUI
 
 struct AddActivityView: View {
     let categories: [Category]
+    let schedule: Schedule
     @Binding var selectedCategory: Category?
     @Binding var date: Date
     @Binding var isPresented: Bool
+    var saveActivity: (ScheduleEvent) -> Void
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,6 +44,7 @@ struct AddActivityView: View {
             
             Button {
                 isPresented.toggle()
+                saveActivity(.saveActivity(.init(id: UUID(), date: date, category: selectedCategory!), schedule))
             } label: {
                 Text("add_activity_save_cta")
             }
@@ -58,9 +61,11 @@ struct AddActivityView_Previews: PreviewProvider {
                 .stubOfficeCategory,
                 .stubReadingCategory
             ],
+            schedule: .firstStubSchedule,
             selectedCategory: .constant(.stubReadingCategory),
             date: .constant(Date.create(day: 01, month: 07, year: 2022)!),
-            isPresented: .constant(true)
+            isPresented: .constant(true),
+            saveActivity: { _ in }
         )
     }
 }

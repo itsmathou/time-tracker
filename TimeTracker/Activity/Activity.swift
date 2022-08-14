@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Activity: Codable, Hashable {
+struct Activity: Codable, Hashable, Identifiable {
+    let id: UUID
     let date: Date
     let category: Category
 }

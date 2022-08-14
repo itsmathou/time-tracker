@@ -15,7 +15,6 @@ struct SchedulesView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var scheduleName = ""
-    @State private var activityDate = Date()
     @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
@@ -186,9 +185,11 @@ private extension SchedulesView {
                 ) {
                     AddActivityView(
                         categories: viewModel.categories,
+                        schedule: schedule,
                         selectedCategory: $viewModel.selectedCategory,
-                        date: $activityDate,
-                        isPresented: $shouldShowAddActivity
+                        date: $viewModel.activityDate,
+                        isPresented: $shouldShowAddActivity,
+                        saveActivity: viewModel.handle
                     )
                     .padding()
                 }

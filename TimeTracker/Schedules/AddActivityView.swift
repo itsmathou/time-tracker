@@ -26,11 +26,11 @@ struct AddActivityView: View {
                     Text("add_activity_date")
                 }
             }
-            .pickerStyle(.menu)
             
             Picker(selection: $selectedCategory) {
                 ForEach(categories) { category in
-                    /*@START_MENU_TOKEN@*/Text(category.name)/*@END_MENU_TOKEN@*/
+                    Text(category.name)
+                        .tag(Optional(category))
                 }
             } label: {
                 HStack {
@@ -69,7 +69,7 @@ struct AddActivityView_Previews: PreviewProvider {
 extension Category {
     static let stubReadingCategory: Self = .init(
         id: UUID(),
-        name: "Bookclub",
+        name: "Book Club",
         iconName: "books.vertical.fill"
     )
     

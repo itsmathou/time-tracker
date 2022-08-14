@@ -12,10 +12,12 @@ final class SchedulesViewModel: ObservableObject {
 
     @Published var schedules: [Schedule]?
     @Published var selectedSchedules = Set<Schedule>()
+    @Published var categories: [Category] = []
     
     init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
         schedules = loadSchedules()
+        categories = loadCategories()
     }
     
     func save(schedule: Schedule) {
@@ -54,6 +56,14 @@ final class SchedulesViewModel: ObservableObject {
 private extension SchedulesViewModel {
     func loadSchedules() -> [Schedule]? {
         return fileManager.loadSchedules()
+    }
+    
+    func loadCategories() -> [Category] {
+        guard let categories = fileManager.loadCategories() else {
+            return [Category(id: UUID(), name: "Uncategorised", iconName: "archivebox")]
+        }
+        
+        return categories
     }
     
     func updateLocalList() {

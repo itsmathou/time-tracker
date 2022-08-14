@@ -186,7 +186,7 @@ private extension SchedulesView {
                     isPresented: $shouldShowAddActivity
                 ) {
                     AddActivityView(
-                        categories: [],
+                        categories: viewModel.categories,
                         selectedCategory: $selectedCategory,
                         date: $activityDate,
                         isPresented: $shouldShowAddActivity

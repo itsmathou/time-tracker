@@ -175,23 +175,29 @@ private extension SchedulesView {
                 Text("schedules_schedule_date_range \(schedule.startDate.formatted(date: .long, time: .omitted)) \(schedule.endDate.formatted(date: .long, time: .omitted))")
                     .padding(.bottom, 5)
                 
-                Button {
-                    addActivityTapped()
-                } label: {
-                    Text("schedules_add_activity_cta")
-                }
-                .popover(
-                    isPresented: $shouldShowAddActivity
-                ) {
-                    AddActivityView(
-                        categories: viewModel.categories,
-                        schedule: schedule,
-                        selectedCategory: $viewModel.selectedCategory,
-                        date: $viewModel.activityDate,
-                        isPresented: $shouldShowAddActivity,
-                        saveActivity: viewModel.handle
-                    )
-                    .padding()
+                VStack {
+                    if !schedule.activities.isEmpty {
+                        Text("You have activities")
+                    }
+                    
+                    Button {
+                        addActivityTapped()
+                    } label: {
+                        Text("schedules_add_activity_cta")
+                    }
+                    .popover(
+                        isPresented: $shouldShowAddActivity
+                    ) {
+                        AddActivityView(
+                            categories: viewModel.categories,
+                            schedule: schedule,
+                            selectedCategory: $viewModel.selectedCategory,
+                            date: $viewModel.activityDate,
+                            isPresented: $shouldShowAddActivity,
+                            saveActivity: viewModel.handle
+                        )
+                        .padding()
+                    }
                 }
                 
                 Rectangle()

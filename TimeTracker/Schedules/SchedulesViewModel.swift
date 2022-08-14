@@ -8,8 +8,8 @@
 import Foundation
 
 enum ScheduleEvent {
-    case saveSchedule(Schedule)
-    case deleteSchedule
+    case saveSchedule
+    case deleteSchedules
     case saveActivity(Activity, Schedule)
 }
 
@@ -18,6 +18,9 @@ final class SchedulesViewModel: ObservableObject {
 
     @Published var schedules: [Schedule]?
     @Published var selectedSchedules = Set<Schedule>()
+    @Published var startDate = Date()
+    @Published var endDate = Date()
+    @Published var scheduleName = ""
     @Published var categories: [Category] = []
     @Published var selectedCategory: Category?
     @Published var activityDate = Date()
@@ -30,44 +33,12 @@ final class SchedulesViewModel: ObservableObject {
     
     func handle(event: ScheduleEvent) {
         switch event {
-        case let .saveSchedule(schedule):
-            print("Save schedule tapped \(schedule)")
-        case .deleteSchedule:
-            print("Delete schedule tapped")
+        case .saveSchedule:
+            saveSchedule()
+        case .deleteSchedules:
+            deleteSchedules()
         case let .saveActivity(activity, schedule):
             save(activity: activity, for: schedule)
-        }
-    }
-    
-    func save(schedule: Schedule) {
-        if let existingSchedules = loadSchedules(),
-           let scheduleUrl = fileManager.documentUrl(for: .schedules) {
-            var newListOfSchedules = existingSchedules
-            newListOfSchedules.append(schedule)
-            let data = try? JSONEncoder().encode(newListOfSchedules)
-            try? data?.write(to: scheduleUrl)
-            schedules = newListOfSchedules
-        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
-            let model = [schedule]
-            let data = try? JSONEncoder().encode(model)
-            try? data?.write(to: scheduleUrl)
-            schedules = model
-        } else {
-            fatalError("Something went really wrong")
-        }
-    }
-    
-    func deleteSchedules() {
-        updateLocalList()
-        if let schedules, !schedules.isEmpty, let scheduleUrl = fileManager.documentUrl(for: .schedules) {
-            let data = try? JSONEncoder().encode(schedules)
-            try? data?.write(to: scheduleUrl)
-        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
-            do {
-                try FileManager.default.removeItem(at: scheduleUrl)
-            } catch let error as NSError {
-                dump("Something went really wrong: \(error)")
-            }
         }
     }
 }
@@ -100,6 +71,45 @@ private extension SchedulesViewModel {
                 selectedSchedule.id != schedule.id
             }
             selectedSchedules.remove(selectedSchedule)
+        }
+    }
+    
+    func saveSchedule() {
+        let schedule = Schedule(
+            id: UUID(),
+            scheduleName: scheduleName,
+            startDate: startDate,
+            endDate: endDate,
+            activities: []
+        )
+        if let existingSchedules = schedules,
+           let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            var newListOfSchedules = existingSchedules
+            newListOfSchedules.append(schedule)
+            let data = try? JSONEncoder().encode(newListOfSchedules)
+            try? data?.write(to: scheduleUrl)
+            schedules = newListOfSchedules
+        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            let model = [schedule]
+            let data = try? JSONEncoder().encode(model)
+            try? data?.write(to: scheduleUrl)
+            schedules = model
+        } else {
+            fatalError("Something went really wrong")
+        }
+    }
+    
+    func deleteSchedules() {
+        updateLocalList()
+        if let schedules, !schedules.isEmpty, let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            let data = try? JSONEncoder().encode(schedules)
+            try? data?.write(to: scheduleUrl)
+        } else if let scheduleUrl = fileManager.documentUrl(for: .schedules) {
+            do {
+                try FileManager.default.removeItem(at: scheduleUrl)
+            } catch let error as NSError {
+                dump("Something went really wrong: \(error)")
+            }
         }
     }
     

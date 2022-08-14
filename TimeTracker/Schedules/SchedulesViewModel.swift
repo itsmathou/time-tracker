@@ -61,7 +61,13 @@ private extension SchedulesViewModel {
     
     func loadCategories() -> [Category] {
         guard let categories = fileManager.loadCategories() else {
-            let defaultCategory = [Category(id: UUID(), name: "Uncategorised", iconName: "archivebox")]
+            let defaultCategory = [
+                Category(
+                    id: UUID(),
+                    name: String(localized: "add_activity_default_category") ,
+                    iconName: "archivebox"
+                )
+            ]
             selectedCategory = defaultCategory.first
             return defaultCategory
         }

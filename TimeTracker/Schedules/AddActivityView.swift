@@ -23,7 +23,7 @@ struct AddActivityView: View {
                     Image(systemName: "clock")
                         .symbolRenderingMode(.hierarchical)
                     
-                    Text("Date")
+                    Text("add_activity_date")
                 }
             }
             .pickerStyle(.menu)
@@ -35,14 +35,15 @@ struct AddActivityView: View {
             } label: {
                 HStack {
                     Image(systemName: "folder.fill")
-                    Text("Category")
+                    
+                    Text("add_activity_category")
                 }
             }
             
             Button {
                 isPresented.toggle()
             } label: {
-                Text("Save")
+                Text("add_activity_save_cta")
             }
             
         }

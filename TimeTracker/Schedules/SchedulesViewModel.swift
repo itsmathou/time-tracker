@@ -13,6 +13,7 @@ final class SchedulesViewModel: ObservableObject {
     @Published var schedules: [Schedule]?
     @Published var selectedSchedules = Set<Schedule>()
     @Published var categories: [Category] = []
+    @Published var selectedCategory: Category?
     
     init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
@@ -60,8 +61,11 @@ private extension SchedulesViewModel {
     
     func loadCategories() -> [Category] {
         guard let categories = fileManager.loadCategories() else {
-            return [Category(id: UUID(), name: "Uncategorised", iconName: "archivebox")]
+            let defaultCategory = [Category(id: UUID(), name: "Uncategorised", iconName: "archivebox")]
+            selectedCategory = defaultCategory.first
+            return defaultCategory
         }
+        selectedCategory = categories.first
         
         return categories
     }

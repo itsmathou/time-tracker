@@ -12,9 +12,6 @@ struct SchedulesView: View {
     @State private var shouldShowMissingNameAlert = false
     @State private var shouldShowDeletionConfirmation = false
     @State private var shouldShowAddActivity = false
-    @State private var startDate = Date()
-    @State private var endDate = Date()
-    @State private var scheduleName = ""
     @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
@@ -95,24 +92,17 @@ private extension SchedulesView {
     }
     
     func saveSchedule() {
-        guard !scheduleName.isEmpty else {
+        guard !viewModel.scheduleName.isEmpty else {
             shouldShowMissingNameAlert = true
             return
         }
-        viewModel.save(
-            schedule: .init(
-                id: UUID(),
-                scheduleName: scheduleName,
-                startDate: startDate,
-                endDate: endDate,
-                activities: []
-            )
-        )
+        
+        viewModel.handle(event: .saveSchedule)
         shouldCreateNewSchedule = false
     }
     
     func deleteSchedules() {
-        viewModel.deleteSchedules()
+        viewModel.handle(event: .deleteSchedules)
     }
     
     var createScheduleView: some View {
@@ -120,24 +110,24 @@ private extension SchedulesView {
             Text("schedules_create_description")
                 .padding(.bottom, 5)
             
-            TextField("schedules_create_name_placeholder", text: $scheduleName)
+            TextField("schedules_create_name_placeholder", text: $viewModel.scheduleName)
                 .padding(.bottom, 5)
                 .focused($scheduleNameFieldIsFocused)
             
             HStack(spacing: 30) {
-                DatePicker(selection: $startDate, displayedComponents: .date) {
+                DatePicker(selection: $viewModel.startDate, displayedComponents: .date) {
                     Text("schedules_create_start")
                         .font(.body)
                 }
                 
-                DatePicker(selection: $endDate, in: startDate..., displayedComponents: .date) {
+                DatePicker(selection: $viewModel.endDate, in: viewModel.startDate..., displayedComponents: .date) {
                     Text("schedules_create_end")
                         .font(.body)
                 }
             }
             .padding(.bottom, 10)
             
-            Text("schedules_create_summary \(startDate.formatted(date: .long, time: .omitted)) \(endDate.formatted(date: .long, time: .omitted))")
+            Text("schedules_create_summary \(viewModel.startDate.formatted(date: .long, time: .omitted)) \(viewModel.endDate.formatted(date: .long, time: .omitted))")
                 .font(.body)
                 .padding(.bottom, 10)
             

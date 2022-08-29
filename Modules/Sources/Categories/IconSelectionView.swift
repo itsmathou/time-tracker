@@ -1,8 +1,3 @@
-//
-//  IconSelectionView.swift
-//  TimeTracker
-//
-
 import SwiftUI
 
 struct IconSelectionView: View {

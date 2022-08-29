@@ -1,8 +1,3 @@
-//
-//  SharedUITests.swift
-//  TimeTracker
-//
-
 import XCTest
 
 @testable import SharedUI

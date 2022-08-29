@@ -1,8 +1,3 @@
-//
-//  ScheduleEvent.swift
-//  TimeTracker
-//
-
 import Foundation
 
 public enum ScheduleEvent {

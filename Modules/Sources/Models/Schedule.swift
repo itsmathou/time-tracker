@@ -1,8 +1,3 @@
-//
-//  Schedule.swift
-//  TimeTracker
-//
-
 import Foundation
 
 public struct Schedule: Codable, Identifiable, Hashable {

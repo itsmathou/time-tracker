@@ -1,8 +1,3 @@
-//
-//  UtilitiesTests.swift
-//  TimeTracker
-//
-
 import XCTest
 
 @testable import FileManagement

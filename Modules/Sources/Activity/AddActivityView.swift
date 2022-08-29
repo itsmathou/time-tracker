@@ -1,8 +1,3 @@
-//
-//  AddActivityView.swift
-//  TimeTracker
-//
-
 import FileManagement
 import Models
 import SwiftUI

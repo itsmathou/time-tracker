@@ -1,8 +1,3 @@
-//
-//  Schedules.swift
-//  TimeTracker
-//
-
 import FileManagement
 import Models
 import SharedUI

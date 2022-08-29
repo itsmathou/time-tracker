@@ -1,8 +1,3 @@
-//
-//  CategoriesView.swift
-//  TimeTracker
-//
-
 import SharedUI
 import SwiftUI
 

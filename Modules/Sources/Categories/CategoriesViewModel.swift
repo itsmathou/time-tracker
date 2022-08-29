@@ -1,8 +1,3 @@
-//
-//  CategoriesViewModel.swift
-//  TimeTracker
-//
-
 import FileManagement
 import Foundation
 import Models

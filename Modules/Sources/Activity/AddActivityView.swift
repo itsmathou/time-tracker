@@ -5,9 +5,9 @@
 //  Created by Mathilde Ferrand on 13/08/2022.
 //
 
+import FileManagement
 import Models
 import SwiftUI
-import Utilities
 
 public struct AddActivityView: View {
     let categories: [TTCategory]

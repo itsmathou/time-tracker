@@ -12,8 +12,8 @@ let package = Package(
             name: "Categories",
             targets: ["Categories"]),
         .library(
-            name: "Utilities",
-            targets: ["Utilities"]
+            name: "FileManagement",
+            targets: ["FileManagement"]
         ),
         .library(
             name: "Models",
@@ -48,7 +48,7 @@ let package = Package(
             dependencies: [
                 "Models",
                 "SharedUI",
-                "Utilities"
+                "FileManagement"
             ]
         ),
         .testTarget(
@@ -56,12 +56,12 @@ let package = Package(
             dependencies: ["Categories"]
         ),
         .target(
-            name: "Utilities",
+            name: "FileManagement",
             dependencies: ["Extensions", "Models"]
         ),
         .testTarget(
-            name: "UtilitiesTests",
-            dependencies: ["Utilities"]
+            name: "FileManagementTests",
+            dependencies: ["FileManagement"]
         ),
         .target(
             name: "Models",
@@ -89,7 +89,7 @@ let package = Package(
         ),
         .target(
             name: "Activity",
-            dependencies: ["Models", "Utilities"]
+            dependencies: ["Models", "FileManagement"]
         ),
         .testTarget(
             name: "ActivityTests",

@@ -7,9 +7,9 @@
 
 import XCTest
 
-@testable import Utilities
+@testable import FileManagement
 
-final class UtilitiesTests: XCTestCase {
+final class FileManagementTests: XCTestCase {
     func testPlaceholder() {
         XCTAssertTrue(true)
     }

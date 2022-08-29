@@ -5,10 +5,10 @@
 //  Created by Mathilde Ferrand on 07/08/2022.
 //
 
+import FileManagement
 import Models
 import SharedUI
 import SwiftUI
-import Utilities
 
 public struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false

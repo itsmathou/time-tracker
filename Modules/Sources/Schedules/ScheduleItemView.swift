@@ -6,10 +6,10 @@
 //
 
 import Activity
+import FileManagement
 import Models
 import SharedUI
 import SwiftUI
-import Utilities
 
 struct ScheduleItemView: View {
     let schedule: Schedule

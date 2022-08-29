@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		B52BCDC428BD02C000CB8405 /* Categories in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC328BD02C000CB8405 /* Categories */; };
 		B52BCDC628BD055600CB8405 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC528BD055600CB8405 /* Models */; };
-		B52BCDC828BD055A00CB8405 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC728BD055A00CB8405 /* Utilities */; };
 		B52BCDCA28BD097400CB8405 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC928BD097400CB8405 /* SharedUI */; };
 		B52BCDCC28BD0CDA00CB8405 /* Schedules in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCB28BD0CDA00CB8405 /* Schedules */; };
 		B52BCDCE28BD0DE500CB8405 /* Activity in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCD28BD0DE500CB8405 /* Activity */; };
 		B52BCDD028BD13AB00CB8405 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCF28BD13AB00CB8405 /* Extensions */; };
+		B52BCDD228BD18D600CB8405 /* FileManagement in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDD128BD18D600CB8405 /* FileManagement */; };
 		B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */; };
 		B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014DA289FD5DE00B17EA4 /* ContentView.swift */; };
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
@@ -53,8 +53,8 @@
 				B52BCDCC28BD0CDA00CB8405 /* Schedules in Frameworks */,
 				B52BCDCE28BD0DE500CB8405 /* Activity in Frameworks */,
 				B52BCDC628BD055600CB8405 /* Models in Frameworks */,
+				B52BCDD228BD18D600CB8405 /* FileManagement in Frameworks */,
 				B52BCDCA28BD097400CB8405 /* SharedUI in Frameworks */,
-				B52BCDC828BD055A00CB8405 /* Utilities in Frameworks */,
 				B52BCDD028BD13AB00CB8405 /* Extensions in Frameworks */,
 				B52BCDC428BD02C000CB8405 /* Categories in Frameworks */,
 			);
@@ -153,11 +153,11 @@
 			packageProductDependencies = (
 				B52BCDC328BD02C000CB8405 /* Categories */,
 				B52BCDC528BD055600CB8405 /* Models */,
-				B52BCDC728BD055A00CB8405 /* Utilities */,
 				B52BCDC928BD097400CB8405 /* SharedUI */,
 				B52BCDCB28BD0CDA00CB8405 /* Schedules */,
 				B52BCDCD28BD0DE500CB8405 /* Activity */,
 				B52BCDCF28BD13AB00CB8405 /* Extensions */,
+				B52BCDD128BD18D600CB8405 /* FileManagement */,
 			);
 			productName = TimeTracker;
 			productReference = B57014D5289FD5DE00B17EA4 /* TimeTracker.app */;
@@ -549,10 +549,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
 		};
-		B52BCDC728BD055A00CB8405 /* Utilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Utilities;
-		};
 		B52BCDC928BD097400CB8405 /* SharedUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedUI;
@@ -568,6 +564,10 @@
 		B52BCDCF28BD13AB00CB8405 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Extensions;
+		};
+		B52BCDD128BD18D600CB8405 /* FileManagement */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileManagement;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

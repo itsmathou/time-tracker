@@ -5,9 +5,9 @@
 //  Created by Mathilde Ferrand on 07/08/2022.
 //
 
+import FileManagement
 import Foundation
 import Models
-import Utilities
 
 public final class CategoriesViewModel: ObservableObject {
     private let fileManager: FileManagement

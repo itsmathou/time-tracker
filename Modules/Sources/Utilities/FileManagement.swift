@@ -6,26 +6,28 @@
 //
 
 import Foundation
+import Models
 
-protocol FileManagement {
+public protocol FileManagement {
     func loadSchedules() -> [Schedule]?
-    func loadCategories() -> [Category]?
+    func loadCategories() -> [TTCategory]?
     func documentUrl(for file: FileName) -> URL?
 }
 
-enum FileName: String {
+public enum FileName: String {
     case categories = "categories.json"
     case schedules = "schedules.json"
 }
 
-final class TTFileManager: FileManagement {
-    func documentUrl(for fileName: FileName) -> URL? {
+public final class TTFileManager: FileManagement {
+    public init() {}
+    public func documentUrl(for fileName: FileName) -> URL? {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let url = NSURL(fileURLWithPath: documentPath)
         return url.appendingPathComponent(fileName.rawValue)
     }
     
-    func loadSchedules() -> [Schedule]? {
+    public func loadSchedules() -> [Schedule]? {
         guard let scheduleUrl = documentUrl(for: .schedules),
               let existingSchedules = try? Data(contentsOf: scheduleUrl) else {
             return nil
@@ -34,12 +36,12 @@ final class TTFileManager: FileManagement {
         return try? JSONDecoder().decode([Schedule].self, from: existingSchedules)
     }
     
-    func loadCategories() -> [Category]? {
+    public func loadCategories() -> [TTCategory]? {
         guard let categoryUrl = documentUrl(for: .categories),
               let existingCategory = try? Data(contentsOf: categoryUrl) else {
             return nil
         }
         
-        return try? JSONDecoder().decode([Category].self, from: existingCategory)
+        return try? JSONDecoder().decode([TTCategory].self, from: existingCategory)
     }
 }

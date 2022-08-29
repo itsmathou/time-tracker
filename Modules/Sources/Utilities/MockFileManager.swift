@@ -6,24 +6,25 @@
 //
 
 import Foundation
+import Models
 
 #if DEBUG
-final class MockFileManager: FileManagement {
+public final class MockFileManager: FileManagement {
     private let schedules: [Schedule]?
 
-    init(schedules: [Schedule]?) {
+    public init(schedules: [Schedule]?) {
         self.schedules = schedules
     }
 
-    func loadSchedules() -> [Schedule]? {
+    public func loadSchedules() -> [Schedule]? {
         return schedules
     }
     
-    func loadCategories() -> [Category]? {
+    public func loadCategories() -> [TTCategory]? {
         return nil
     }
     
-    func documentUrl(for file: FileName) -> URL? {
+    public func documentUrl(for file: FileName) -> URL? {
         return nil
     }
 }

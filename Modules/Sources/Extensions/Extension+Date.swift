@@ -9,7 +9,14 @@ import Foundation
 
 #if DEBUG
 extension Date {
-    static func create(day: Int, month: Int, year: Int, hour: Int? = nil, minute: Int? = nil, second: Int? = nil) -> Date? {
+    public static func create(
+        day: Int,
+        month: Int,
+        year: Int,
+        hour: Int? = nil,
+        minute: Int? = nil,
+        second: Int? = nil
+    ) -> Date? {
         guard let date = DateComponents(calendar: Calendar.current,
                                         year: year,
                                         month: month,

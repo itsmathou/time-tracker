@@ -6,14 +6,10 @@
 //
 
 import Foundation
+import Models
+import Utilities
 
-enum ScheduleEvent {
-    case saveSchedule
-    case deleteSchedules
-    case saveActivity(Activity, Schedule)
-}
-
-final class SchedulesViewModel: ObservableObject {
+public final class SchedulesViewModel: ObservableObject {
     private let fileManager: FileManagement
 
     @Published var schedules: [Schedule]?
@@ -21,11 +17,11 @@ final class SchedulesViewModel: ObservableObject {
     @Published var startDate = Date()
     @Published var endDate = Date()
     @Published var scheduleName = ""
-    @Published var categories: [Category] = []
-    @Published var selectedCategory: Category?
+    @Published var categories: [TTCategory] = []
+    @Published var selectedCategory: TTCategory?
     @Published var activityDate = Date()
     
-    init(fileManager: FileManagement = TTFileManager()) {
+    public init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
         schedules = loadSchedules()
         categories = loadCategories()
@@ -48,10 +44,10 @@ private extension SchedulesViewModel {
         return fileManager.loadSchedules()
     }
     
-    func loadCategories() -> [Category] {
+    func loadCategories() -> [TTCategory] {
         guard let categories = fileManager.loadCategories() else {
             let defaultCategory = [
-                Category(
+                TTCategory(
                     id: UUID(),
                     name: String(localized: "add_activity_default_category") ,
                     iconName: "archivebox"

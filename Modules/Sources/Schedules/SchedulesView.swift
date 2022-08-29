@@ -5,9 +5,12 @@
 //  Created by Mathilde Ferrand on 07/08/2022.
 //
 
+import Models
+import SharedUI
 import SwiftUI
+import Utilities
 
-struct SchedulesView: View {
+public struct SchedulesView: View {
     @State private var shouldCreateNewSchedule = false
     @State private var shouldShowMissingNameAlert = false
     @State private var shouldShowDeletionConfirmation = false
@@ -15,11 +18,11 @@ struct SchedulesView: View {
     @FocusState private var scheduleNameFieldIsFocused: Bool
     @ObservedObject private var viewModel: SchedulesViewModel
     
-    init(viewModel: SchedulesViewModel) {
+    public init(viewModel: SchedulesViewModel) {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             Group {
                 Text(shouldCreateNewSchedule ? "schedules_create_title" : "schedules_list_title")

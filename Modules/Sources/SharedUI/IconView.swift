@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct IconView: View {
+public struct IconView: View {
     let iconName: String
     
-    init(_ iconName: String) {
+    public init(_ iconName: String) {
         self.iconName = iconName
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             Circle()
                 .foregroundColor(.gray.opacity(0.5))

@@ -5,6 +5,8 @@
 //  Created by Mathilde Ferrand on 07/08/2022.
 //
 
+import Categories
+import Schedules
 import SwiftUI
 
 struct ContentView: View {

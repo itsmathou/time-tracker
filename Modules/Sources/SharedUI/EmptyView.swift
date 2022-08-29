@@ -7,11 +7,19 @@
 
 import SwiftUI
 
-struct EmptyView: View {
+public struct EmptyView: View {
     let title: String.LocalizationValue
     let iconName: String
     
-    var body: some View {
+    public init(
+        title: String.LocalizationValue,
+        iconName: String
+    ) {
+        self.title = title
+        self.iconName = iconName
+    }
+    
+    public var body: some View {
         VStack {
             Image(systemName: iconName)
                 .symbolRenderingMode(.palette)

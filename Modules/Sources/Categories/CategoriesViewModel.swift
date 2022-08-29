@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import Models
+import Utilities
 
-final class CategoriesViewModel: ObservableObject {
+public final class CategoriesViewModel: ObservableObject {
     private let fileManager: FileManagement
-    @Published var items: [Category]?
+    @Published var items: [TTCategory]?
     
-    init(fileManager: FileManagement = TTFileManager()) {
+    public init(fileManager: FileManagement = TTFileManager()) {
         self.fileManager = fileManager
         items = loadExistingCategories()
     }
@@ -20,12 +22,12 @@ final class CategoriesViewModel: ObservableObject {
         if let existingCategories = loadExistingCategories(),
            let categoriesUrl = fileManager.documentUrl(for: .categories) {
             var newListOfCategories = existingCategories
-            newListOfCategories.append(Category(id: UUID(), name: category, iconName: iconName))
+            newListOfCategories.append(TTCategory(id: UUID(), name: category, iconName: iconName))
             let data = try? JSONEncoder().encode(newListOfCategories)
             try? data?.write(to: categoriesUrl)
             items = newListOfCategories
         } else if let categoryUrl = fileManager.documentUrl(for: .categories) {
-            let categories = [Category(id: UUID(), name: category, iconName: iconName)]
+            let categories = [TTCategory(id: UUID(), name: category, iconName: iconName)]
             let data = try? JSONEncoder().encode(categories)
             try? data?.write(to: categoryUrl)
             items = categories
@@ -36,7 +38,7 @@ final class CategoriesViewModel: ObservableObject {
 }
 
 private extension CategoriesViewModel {
-    func loadExistingCategories() -> [Category]? {
+    func loadExistingCategories() -> [TTCategory]? {
         return fileManager.loadCategories()
     }
 }

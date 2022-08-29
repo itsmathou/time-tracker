@@ -5,20 +5,21 @@
 //  Created by Mathilde Ferrand on 07/08/2022.
 //
 
+import SharedUI
 import SwiftUI
 
-struct CategoriesView: View {
+public struct CategoriesView: View {
     @ObservedObject private var viewModel: CategoriesViewModel
     @State private var shouldCreateNewCategory = false
     @State private var shouldShowIconSelection = false
     @State private var categoryName = ""
     @State private var iconName = "heart.fill"
     
-    init(viewModel: CategoriesViewModel) {
+    public init(viewModel: CategoriesViewModel) {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             Group {
                 Text("categories_title")

@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50453DC28A6DE77001556F7 /* Schedule+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */; };
-		B50453DE28A6DEC7001556F7 /* MockFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50453DD28A6DEC7001556F7 /* MockFileManager.swift */; };
-		B51DD5F828A83EA300DF23CB /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DD5F728A83EA300DF23CB /* AddActivityView.swift */; };
-		B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359EE28A02E3200FDF176 /* FileManagement.swift */; };
-		B52359F228A041BE00FDF176 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F128A041BE00FDF176 /* CategoriesView.swift */; };
-		B52359F428A0436B00FDF176 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F328A0436B00FDF176 /* CategoriesViewModel.swift */; };
-		B52359F628A0438F00FDF176 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F528A0438F00FDF176 /* CategoryModel.swift */; };
-		B52359F928A0468600FDF176 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52359F828A0468600FDF176 /* EmptyView.swift */; };
-		B55F63CD28A9583D00F571FF /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F63CC28A9583D00F571FF /* ScheduleItemView.swift */; };
-		B55F63CF28A9762300F571FF /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F63CE28A9762300F571FF /* IconView.swift */; };
+		B52BCDC428BD02C000CB8405 /* Categories in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC328BD02C000CB8405 /* Categories */; };
+		B52BCDC628BD055600CB8405 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC528BD055600CB8405 /* Models */; };
+		B52BCDC828BD055A00CB8405 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC728BD055A00CB8405 /* Utilities */; };
+		B52BCDCA28BD097400CB8405 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDC928BD097400CB8405 /* SharedUI */; };
+		B52BCDCC28BD0CDA00CB8405 /* Schedules in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCB28BD0CDA00CB8405 /* Schedules */; };
+		B52BCDCE28BD0DE500CB8405 /* Activity in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCD28BD0DE500CB8405 /* Activity */; };
+		B52BCDD028BD13AB00CB8405 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = B52BCDCF28BD13AB00CB8405 /* Extensions */; };
 		B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */; };
 		B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014DA289FD5DE00B17EA4 /* ContentView.swift */; };
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
@@ -24,13 +21,7 @@
 		B57014EB289FD5DF00B17EA4 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */; };
 		B57014F5289FD5DF00B17EA4 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */; };
 		B57014F7289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */; };
-		B5BAC2F428A90D0200DEBFE7 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BAC2F328A90D0200DEBFE7 /* Activity.swift */; };
-		B5CA8C1E28A814DD001FF5C4 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA8C1D28A814DD001FF5C4 /* IconSelectionView.swift */; };
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
-		B5D34ADD289FF14E00477111 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34ADC289FF14E00477111 /* Schedule.swift */; };
-		B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE228A00D3E00477111 /* SchedulesView.swift */; };
-		B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AE428A019F000477111 /* SchedulesViewModel.swift */; };
-		B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D34AF928A0223A00477111 /* Extension+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,16 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Schedule+Stub.swift"; sourceTree = "<group>"; };
-		B50453DD28A6DEC7001556F7 /* MockFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileManager.swift; sourceTree = "<group>"; };
-		B51DD5F728A83EA300DF23CB /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
-		B52359EE28A02E3200FDF176 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
-		B52359F128A041BE00FDF176 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		B52359F328A0436B00FDF176 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
-		B52359F528A0438F00FDF176 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		B52359F828A0468600FDF176 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		B55F63CC28A9583D00F571FF /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
-		B55F63CE28A9762300F571FF /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		B52BCDC128BD012E00CB8405 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 		B57014D5289FD5DE00B17EA4 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		B57014DA289FD5DE00B17EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,13 +54,7 @@
 		B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
 		B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B5BAC2F328A90D0200DEBFE7 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		B5CA8C1D28A814DD001FF5C4 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B5D34ADC289FF14E00477111 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
-		B5D34AE228A00D3E00477111 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
-		B5D34AE428A019F000477111 /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
-		B5D34AF928A0223A00477111 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +62,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52BCDCC28BD0CDA00CB8405 /* Schedules in Frameworks */,
+				B52BCDCE28BD0DE500CB8405 /* Activity in Frameworks */,
+				B52BCDC628BD055600CB8405 /* Models in Frameworks */,
+				B52BCDCA28BD097400CB8405 /* SharedUI in Frameworks */,
+				B52BCDC828BD055A00CB8405 /* Utilities in Frameworks */,
+				B52BCDD028BD13AB00CB8405 /* Extensions in Frameworks */,
+				B52BCDC428BD02C000CB8405 /* Categories in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,43 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B52359ED28A02E2000FDF176 /* Utilities */ = {
+		B52BCDC228BD02C000CB8405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B52359EE28A02E3200FDF176 /* FileManagement.swift */,
-				B50453DD28A6DEC7001556F7 /* MockFileManager.swift */,
 			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		B52359F028A0419D00FDF176 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				B52359F128A041BE00FDF176 /* CategoriesView.swift */,
-				B5CA8C1D28A814DD001FF5C4 /* IconSelectionView.swift */,
-				B52359F328A0436B00FDF176 /* CategoriesViewModel.swift */,
-				B52359F528A0438F00FDF176 /* CategoryModel.swift */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		B52359F728A0467500FDF176 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				B52359F828A0468600FDF176 /* EmptyView.swift */,
-				B55F63CE28A9762300F571FF /* IconView.swift */,
-			);
-			path = Shared;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B57014CC289FD5DE00B17EA4 = {
 			isa = PBXGroup;
 			children = (
+				B52BCDC128BD012E00CB8405 /* Modules */,
 				B5D34AD6289FE68300477111 /* Resources */,
 				B57014D7289FD5DE00B17EA4 /* TimeTracker */,
 				B57014E9289FD5DF00B17EA4 /* TimeTrackerTests */,
 				B57014F3289FD5DF00B17EA4 /* TimeTrackerUITests */,
 				B57014D6289FD5DE00B17EA4 /* Products */,
+				B52BCDC228BD02C000CB8405 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,16 +122,10 @@
 		B57014D7289FD5DE00B17EA4 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				B5BAC2F228A90CCE00DEBFE7 /* Activity */,
-				B52359F028A0419D00FDF176 /* Categories */,
 				B57014DA289FD5DE00B17EA4 /* ContentView.swift */,
-				B5D34AF828A0222D00477111 /* Extensions */,
 				B57014DF289FD5DF00B17EA4 /* Preview Content */,
-				B5D34AE128A00D2F00477111 /* Schedules */,
-				B52359F728A0467500FDF176 /* Shared */,
 				B57014DE289FD5DF00B17EA4 /* TimeTracker.entitlements */,
 				B57014D8289FD5DE00B17EA4 /* TimeTrackerApp.swift */,
-				B52359ED28A02E2000FDF176 /* Utilities */,
 			);
 			path = TimeTracker;
 			sourceTree = "<group>";
@@ -198,15 +155,6 @@
 			path = TimeTrackerUITests;
 			sourceTree = "<group>";
 		};
-		B5BAC2F228A90CCE00DEBFE7 /* Activity */ = {
-			isa = PBXGroup;
-			children = (
-				B51DD5F728A83EA300DF23CB /* AddActivityView.swift */,
-				B5BAC2F328A90D0200DEBFE7 /* Activity.swift */,
-			);
-			path = Activity;
-			sourceTree = "<group>";
-		};
 		B5D34AD6289FE68300477111 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,26 +162,6 @@
 				B5D34ADB289FE6A300477111 /* Localizable.strings */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B5D34AE128A00D2F00477111 /* Schedules */ = {
-			isa = PBXGroup;
-			children = (
-				B5D34ADC289FF14E00477111 /* Schedule.swift */,
-				B5D34AE228A00D3E00477111 /* SchedulesView.swift */,
-				B55F63CC28A9583D00F571FF /* ScheduleItemView.swift */,
-				B50453DB28A6DE77001556F7 /* Schedule+Stub.swift */,
-				B5D34AE428A019F000477111 /* SchedulesViewModel.swift */,
-			);
-			path = Schedules;
-			sourceTree = "<group>";
-		};
-		B5D34AF828A0222D00477111 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B5D34AF928A0223A00477111 /* Extension+Date.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +180,15 @@
 			dependencies = (
 			);
 			name = TimeTracker;
+			packageProductDependencies = (
+				B52BCDC328BD02C000CB8405 /* Categories */,
+				B52BCDC528BD055600CB8405 /* Models */,
+				B52BCDC728BD055A00CB8405 /* Utilities */,
+				B52BCDC928BD097400CB8405 /* SharedUI */,
+				B52BCDCB28BD0CDA00CB8405 /* Schedules */,
+				B52BCDCD28BD0DE500CB8405 /* Activity */,
+				B52BCDCF28BD13AB00CB8405 /* Extensions */,
+			);
 			productName = TimeTracker;
 			productReference = B57014D5289FD5DE00B17EA4 /* TimeTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -367,24 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50453DC28A6DE77001556F7 /* Schedule+Stub.swift in Sources */,
-				B5D34AE328A00D3E00477111 /* SchedulesView.swift in Sources */,
-				B50453DE28A6DEC7001556F7 /* MockFileManager.swift in Sources */,
-				B52359F928A0468600FDF176 /* EmptyView.swift in Sources */,
-				B5CA8C1E28A814DD001FF5C4 /* IconSelectionView.swift in Sources */,
-				B52359F428A0436B00FDF176 /* CategoriesViewModel.swift in Sources */,
-				B5BAC2F428A90D0200DEBFE7 /* Activity.swift in Sources */,
-				B52359EF28A02E3200FDF176 /* FileManagement.swift in Sources */,
 				B57014DB289FD5DE00B17EA4 /* ContentView.swift in Sources */,
 				B57014D9289FD5DE00B17EA4 /* TimeTrackerApp.swift in Sources */,
-				B55F63CD28A9583D00F571FF /* ScheduleItemView.swift in Sources */,
-				B51DD5F828A83EA300DF23CB /* AddActivityView.swift in Sources */,
-				B52359F628A0438F00FDF176 /* CategoryModel.swift in Sources */,
-				B55F63CF28A9762300F571FF /* IconView.swift in Sources */,
-				B5D34AFA28A0223A00477111 /* Extension+Date.swift in Sources */,
-				B5D34ADD289FF14E00477111 /* Schedule.swift in Sources */,
-				B5D34AE528A019F000477111 /* SchedulesViewModel.swift in Sources */,
-				B52359F228A041BE00FDF176 /* CategoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +664,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B52BCDC328BD02C000CB8405 /* Categories */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Categories;
+		};
+		B52BCDC528BD055600CB8405 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		B52BCDC728BD055A00CB8405 /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
+		};
+		B52BCDC928BD097400CB8405 /* SharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedUI;
+		};
+		B52BCDCB28BD0CDA00CB8405 /* Schedules */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Schedules;
+		};
+		B52BCDCD28BD0DE500CB8405 /* Activity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Activity;
+		};
+		B52BCDCF28BD13AB00CB8405 /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B57014CD289FD5DE00B17EA4 /* Project object */;
 }

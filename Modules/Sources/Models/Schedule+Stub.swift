@@ -5,11 +5,12 @@
 //  Created by Mathilde Ferrand on 12/08/2022.
 //
 
+import Extensions
 import Foundation
 
 #if DEBUG
 extension Schedule {
-    static let firstStubSchedule: Self = .init(
+    public static let firstStubSchedule: Self = .init(
         id: UUID(),
         scheduleName: "July 2021",
         startDate: Date.create(day: 1, month: 7, year: 2021)!,
@@ -17,7 +18,7 @@ extension Schedule {
         activities: []
     )
     
-    static let secondStubSchedule: Self = .init(
+    public static let secondStubSchedule: Self = .init(
         id: UUID(),
         scheduleName: "August 2021",
         startDate: Date.create(day: 1, month: 8, year: 2021)!,

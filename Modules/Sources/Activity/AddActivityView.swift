@@ -5,17 +5,35 @@
 //  Created by Mathilde Ferrand on 13/08/2022.
 //
 
+import Models
 import SwiftUI
+import Utilities
 
-struct AddActivityView: View {
-    let categories: [Category]
+public struct AddActivityView: View {
+    let categories: [TTCategory]
     let schedule: Schedule
-    @Binding var selectedCategory: Category?
+    @Binding var selectedCategory: TTCategory?
     @Binding var date: Date
     @Binding var isPresented: Bool
     var saveActivity: (ScheduleEvent) -> Void
+    
+    public init(
+        categories: [TTCategory],
+        schedule: Schedule,
+        selectedCategory: Binding<TTCategory?>,
+        date: Binding<Date>,
+        isPresented: Binding<Bool>,
+        saveActivity: @escaping (ScheduleEvent) -> Void
+    ) {
+        self.categories = categories
+        self.schedule = schedule
+        self._selectedCategory = selectedCategory
+        self._date = date
+        self._isPresented = isPresented
+        self.saveActivity = saveActivity
+    }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             DatePicker(
                 selection: $date,
@@ -71,7 +89,7 @@ struct AddActivityView_Previews: PreviewProvider {
 }
 
 #if DEBUG
-extension Category {
+extension TTCategory {
     static let stubReadingCategory: Self = .init(
         id: UUID(),
         name: "Book Club",

@@ -5,7 +5,11 @@
 //  Created by Mathilde Ferrand on 14/08/2022.
 //
 
+import Activity
+import Models
+import SharedUI
 import SwiftUI
+import Utilities
 
 struct ScheduleItemView: View {
     let schedule: Schedule

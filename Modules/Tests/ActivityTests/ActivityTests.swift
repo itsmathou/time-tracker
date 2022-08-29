@@ -2,8 +2,6 @@
 //  CategoriesTests.swift
 //  TimeTracker
 //
-//  Created by Mathilde Ferrand on 14/08/2022.
-//
 
 import XCTest
 

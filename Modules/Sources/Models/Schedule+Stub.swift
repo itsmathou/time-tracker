@@ -2,8 +2,6 @@
 //  Schedule+Stub.swift
 //  TimeTracker
 //
-//  Created by Mathilde Ferrand on 12/08/2022.
-//
 
 import Extensions
 import Foundation

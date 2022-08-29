@@ -1,8 +1,6 @@
 //
 //  ScheduleEvent.swift
-//  
-//
-//  Created by Mathilde Ferrand on 29/08/2022.
+//  TimeTracker
 //
 
 import Foundation

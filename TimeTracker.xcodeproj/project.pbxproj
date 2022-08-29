@@ -19,20 +19,11 @@
 		B57014DD289FD5DF00B17EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014DC289FD5DF00B17EA4 /* Assets.xcassets */; };
 		B57014E1289FD5DF00B17EA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57014E0289FD5DF00B17EA4 /* Preview Assets.xcassets */; };
 		B57014EB289FD5DF00B17EA4 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */; };
-		B57014F5289FD5DF00B17EA4 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */; };
-		B57014F7289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */; };
 		B5D34AD9289FE6A300477111 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D34ADB289FE6A300477111 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		B57014E7289FD5DF00B17EA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B57014CD289FD5DE00B17EA4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B57014D4289FD5DE00B17EA4;
-			remoteInfo = TimeTracker;
-		};
-		B57014F1289FD5DF00B17EA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B57014CD289FD5DE00B17EA4 /* Project object */;
 			proxyType = 1;
@@ -51,9 +42,6 @@
 		B57014E0289FD5DF00B17EA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B57014E6289FD5DF00B17EA4 /* TimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerTests.swift; sourceTree = "<group>"; };
-		B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
-		B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B5D34ADA289FE6A300477111 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,13 +67,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B57014ED289FD5DF00B17EA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,7 +84,6 @@
 				B5D34AD6289FE68300477111 /* Resources */,
 				B57014D7289FD5DE00B17EA4 /* TimeTracker */,
 				B57014E9289FD5DF00B17EA4 /* TimeTrackerTests */,
-				B57014F3289FD5DF00B17EA4 /* TimeTrackerUITests */,
 				B57014D6289FD5DE00B17EA4 /* Products */,
 				B52BCDC228BD02C000CB8405 /* Frameworks */,
 			);
@@ -114,7 +94,6 @@
 			children = (
 				B57014D5289FD5DE00B17EA4 /* TimeTracker.app */,
 				B57014E6289FD5DF00B17EA4 /* TimeTrackerTests.xctest */,
-				B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,15 +123,6 @@
 				B57014EA289FD5DF00B17EA4 /* TimeTrackerTests.swift */,
 			);
 			path = TimeTrackerTests;
-			sourceTree = "<group>";
-		};
-		B57014F3289FD5DF00B17EA4 /* TimeTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B57014F4289FD5DF00B17EA4 /* TimeTrackerUITests.swift */,
-				B57014F6289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift */,
-			);
-			path = TimeTrackerUITests;
 			sourceTree = "<group>";
 		};
 		B5D34AD6289FE68300477111 /* Resources */ = {
@@ -211,24 +181,6 @@
 			productReference = B57014E6289FD5DF00B17EA4 /* TimeTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B57014EF289FD5DF00B17EA4 /* TimeTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5701500289FD5DF00B17EA4 /* Build configuration list for PBXNativeTarget "TimeTrackerUITests" */;
-			buildPhases = (
-				B57014EC289FD5DF00B17EA4 /* Sources */,
-				B57014ED289FD5DF00B17EA4 /* Frameworks */,
-				B57014EE289FD5DF00B17EA4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B57014F2289FD5DF00B17EA4 /* PBXTargetDependency */,
-			);
-			name = TimeTrackerUITests;
-			productName = TimeTrackerUITests;
-			productReference = B57014F0289FD5DF00B17EA4 /* TimeTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,10 +195,6 @@
 						CreatedOnToolsVersion = 14.0;
 					};
 					B57014E5289FD5DF00B17EA4 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = B57014D4289FD5DE00B17EA4;
-					};
-					B57014EF289FD5DF00B17EA4 = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = B57014D4289FD5DE00B17EA4;
 					};
@@ -267,7 +215,6 @@
 			targets = (
 				B57014D4289FD5DE00B17EA4 /* TimeTracker */,
 				B57014E5289FD5DF00B17EA4 /* TimeTrackerTests */,
-				B57014EF289FD5DF00B17EA4 /* TimeTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,13 +231,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B57014E4289FD5DF00B17EA4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B57014EE289FD5DF00B17EA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,15 +257,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B57014EC289FD5DF00B17EA4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B57014F7289FD5DF00B17EA4 /* TimeTrackerUITestsLaunchTests.swift in Sources */,
-				B57014F5289FD5DF00B17EA4 /* TimeTrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -333,11 +264,6 @@
 			isa = PBXTargetDependency;
 			target = B57014D4289FD5DE00B17EA4 /* TimeTracker */;
 			targetProxy = B57014E7289FD5DF00B17EA4 /* PBXContainerItemProxy */;
-		};
-		B57014F2289FD5DF00B17EA4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B57014D4289FD5DE00B17EA4 /* TimeTracker */;
-			targetProxy = B57014F1289FD5DF00B17EA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -582,48 +508,6 @@
 			};
 			name = Release;
 		};
-		B5701501289FD5DF00B17EA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathildeferrand.TimeTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeTracker;
-			};
-			name = Debug;
-		};
-		B5701502289FD5DF00B17EA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mathildeferrand.TimeTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -650,15 +534,6 @@
 			buildConfigurations = (
 				B57014FE289FD5DF00B17EA4 /* Debug */,
 				B57014FF289FD5DF00B17EA4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5701500289FD5DF00B17EA4 /* Build configuration list for PBXNativeTarget "TimeTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5701501289FD5DF00B17EA4 /* Debug */,
-				B5701502289FD5DF00B17EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

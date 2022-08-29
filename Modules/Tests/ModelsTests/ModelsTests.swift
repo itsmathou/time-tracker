@@ -1,8 +1,3 @@
-//
-//  ModelsTests.swift
-//  TimeTracker
-//
-
 import XCTest
 
 @testable import Models

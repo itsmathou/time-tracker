@@ -1,8 +1,3 @@
-//
-//  Schedule+Stub.swift
-//  TimeTracker
-//
-
 import Extensions
 import Foundation
 

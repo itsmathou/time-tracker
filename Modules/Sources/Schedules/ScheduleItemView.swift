@@ -1,8 +1,3 @@
-//
-//  ScheduleItemView.swift
-//  TimeTracker
-//
-
 import Activity
 import FileManagement
 import Models

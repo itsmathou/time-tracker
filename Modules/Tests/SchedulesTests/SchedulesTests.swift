@@ -1,8 +1,3 @@
-//
-//  SchedulesTests.swift
-//  TimeTracker
-//
-
 import XCTest
 
 @testable import Schedules

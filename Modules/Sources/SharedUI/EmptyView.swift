@@ -1,8 +1,3 @@
-//
-//  EmptyView.swift
-//  TimeTracker
-//
-
 import SwiftUI
 
 public struct EmptyView: View {

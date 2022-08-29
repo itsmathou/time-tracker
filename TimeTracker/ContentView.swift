@@ -1,8 +1,3 @@
-//
-//  ContentView.swift
-//  TimeTracker
-//
-
 import Categories
 import Schedules
 import SwiftUI

@@ -1,8 +1,3 @@
-//
-//  CategoryModel.swift
-//  TimeTracker
-//
-
 import Foundation
 
 public struct TTCategory: Identifiable, Codable, Hashable {

@@ -1,8 +1,3 @@
-//
-//  Extension+Date.swift
-//  TimeTracker
-//
-
 import Foundation
 
 #if DEBUG

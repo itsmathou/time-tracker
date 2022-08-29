@@ -1,8 +1,3 @@
-//
-//  CategoriesTests.swift
-//  TimeTracker
-//
-
 import XCTest
 
 @testable import Categories

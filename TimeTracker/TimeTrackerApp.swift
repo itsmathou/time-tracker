@@ -1,8 +1,3 @@
-//
-//  TimeTrackerApp.swift
-//  TimeTracker
-//
-
 import SwiftUI
 
 @main

@@ -1,8 +1,3 @@
-//
-//  Activity.swift
-//  TimeTracker
-//
-
 import Foundation
 
 public struct Activity: Codable, Hashable, Identifiable {
